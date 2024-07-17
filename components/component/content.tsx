@@ -4,11 +4,13 @@ import { Button } from "@/components/ui/button";
 import img1 from "./img1.jpg";
 import img2 from "./img2.png";
 import logo from "./image.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function Content() {
+  const [expandedItems, setExpandedItems] = useState<number[]>([]);
   const HoverWord = ({ children, className }: any) => {
     const [isHovered, setIsHovered] = useState(false);
+
     return (
       <span
         className={`inline-block transition-transform duration-200 ${
@@ -38,6 +40,55 @@ export function Content() {
     },
   ];
 
+  const aboutContent = [
+    {
+      id: 1,
+      text: "I'm a multi-disciplinary product designer with 6 years of experience based in London. Currently at  leading several high-priority privacy and safety features on Android – the world’s most widely used operating system.",
+    },
+    {
+      id: 2,
+      text: "I am driven by curiosity and my mission to design products that balance user experience with business objectives.",
+    },
+    {
+      id: 3,
+      text: "Before Google, I worked as a Senior UX Designer at , helping various high-profile clients, from banking, non-profit, retail, energy, and telco, to bring disruptive digital products and services to market and help grow clients' own design teams.",
+    },
+    {
+      id: 4,
+      text: "In my downtime, I enjoy exploring new destinations with my trusty camera.",
+    },
+  ];
+
+  const experience = [
+    {
+      id: 1,
+      company: "Google",
+      role: "Interaction Designer",
+    },
+    {
+      id: 2,
+      company: "McKinsey & Company",
+      role: "Product Design Lead",
+    },
+  ];
+
+  const toggleItem = (itemId: number) => {
+    setExpandedItems((prevExpanded) =>
+      prevExpanded.includes(itemId)
+        ? prevExpanded.filter((id) => id !== itemId)
+        : [...prevExpanded, itemId]
+    );
+  };
+  const knownForItems = [
+    "User Research",
+    "Product Design",
+    "User Experience Design",
+    "Design Strategy",
+    "Motion Design",
+    "High Fidelity Prototyping",
+    "Workshop Facilitation",
+    "Certified SCRUM Master",
+  ];
   return (
     <div className="bg-black text-white">
       <main className=" align-middle px-6 md:px-12 lg:px-24">
@@ -92,12 +143,16 @@ export function Content() {
             </div>
           </section>
         </div>
-        
-        <section className="projects-section">
+
+        <section className="projects-section relative">
+        <div className=" about-section line absolute top-0 left-0 right-0 mx-auto w-5/7 h-px bg-gray-100"></div>
+
           <div className="container">
             <div className="parent-container">
               <div className="header-container">
-                <div className="section-title text-4xl font-bold">Selected works</div>
+                <div className="section-title text-4xl font-bold">
+                  Selected works
+                </div>
                 <div className="section-title text-2xl font-thin">21'-24'</div>
               </div>
             </div>
@@ -130,71 +185,164 @@ export function Content() {
             </div>
           </div>
         </section>
-        <section className="my-16">
-          <h2 className="text-2xl font-bold">About</h2>
-          <p className="mt-4 text-lg">
-            I\'m a multi-disciplinary product designer with 6 years of
-            experience based in London. Currently at Google leading several
-            high-priority privacy and safety features on Android – the world’s
-            most widely used operating system.
-          </p>
-          <p className="mt-4 text-lg">
-            I am driven by curiosity and my mission to design products that
-            balance user experience with business objectives.
-          </p>
-          <p className="mt-4 text-lg">
-            Before Google, I worked as a Senior UX Designer at McKinsey &
-            Company, helping various high-profile clients, from banking
-            non-profit, retail, energy, and telco, to bring disruptive digital
-            products and services to market and help grow clients' own design
-            teams.
-          </p>
-          <p className="mt-4 text-lg">
-            In my downtime, I enjoy exploring new destinations with my trusty
-            camera.
-          </p>
-          <Button className="mt-8">Download CV</Button>
-          <img
-            src="/placeholder.svg"
-            alt="Profile"
-            className="mt-8 w-48 h-48 rounded-full"
-          />
-        </section>
-        <section className="my-16">
-          <h2 className="text-2xl font-bold">What I'm known for</h2>
-          <ul className="mt-4 space-y-2 text-lg">
-            <li>User Research</li>
-            <li>Product Design</li>
-            <li>User Experience Design</li>
-            <li>Design Strategy</li>
-            <li>Motion Design</li>
-            <li>High Fidelity Prototyping</li>
-            <li>Workshop Facilitation</li>
-            <li>Certified SCRUM Master</li>
-          </ul>
-        </section>
-        <section className="my-16">
-          <h2 className="text-2xl font-bold">Coaching</h2>
-          <p className="mt-4 text-lg">
-            Looking for 1:1 mentoring with your design career?
-          </p>
-          <p className="mt-4 text-lg">
-            I'm here to help! I've helped many people land their first job in UX
-            over the years. Maybe you're feeling a bit lost at building your
-            portfolio, contemplating a career switch into UX design, or just
-            need help with some challenges you're facing at work.
-          </p>
-          <Button className="mt-8">Book now</Button>
-          <div className="mt-8 p-4 bg-gray-800 rounded-lg">
-            <p className="text-lg text-gray-400">
-              "Dousan is very kind and incredibly generous in sharing his past
-              experiences and how he tackled the challenges he faced. He was
-              super helpful and gave me some great advice on how to take my
-              portfolio and/or the roles I'm applying for."
-            </p>
-            <p className="mt-4 text-lg font-semibold">- Junior UX Designer</p>
+
+        <section className="about-section bg-black text-white py-10 px-6 md:px-12 lg:px-24 relative">
+          <div className=" about-section line absolute top-0 left-0 right-0 mx-auto w-5/7 h-px bg-gray-100"></div>
+          <div className="container mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+              <div className="about-text text-left">
+                <div className="section-title text-4xl font-bold">About</div>
+              </div>
+              <div className="experience">
+                {aboutContent.map((item) => (
+                  <p key={item.id} className="text-lg mb-6">
+                    {item.text}
+                  </p>
+                ))}
+                {experience.map((item) => (
+                  <div key={item.id} className="experience-item mb-6">
+                    <div
+                      className="flex items-center justify-between cursor-pointer"
+                      onClick={() => toggleItem(item.id)} // Toggle expansion
+                    >
+                      <h3 className="text-xl font-bold">{item.company}</h3>
+                      <span className="text-2xl transition-transform duration-300 transform">
+                        {expandedItems.includes(item.id) ? "-" : "+"}{" "}
+                      </span>
+                    </div>
+                    {expandedItems.includes(item.id) && (
+                      <p className="text-gray-400 mt-2">{item.role}</p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
+
+        <section className="known-for-section bg-black text-white py-8 px-6 md:px-12 lg:px-24 relative">
+        <div className=" about-section line absolute top-0 left-0 right-0 mx-auto w-5/7 h-px bg-gray-100"></div>
+          <div className="container mx-auto">
+            <h3 className="known-for-title text-2xl text-gray-400 mb-6">
+              What I'm known for
+            </h3>
+            <ul className="about-text text-right">
+              {knownForItems.map((item, index) => (
+                <li key={index} className="known-for-item">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+        
+
+        <section className="contact-section bg-black text-white py-16 px-6 md:px-12 lg:px-24 relative">
+      <div className="container mx-auto">
+        <h2 className="contact-title text-3xl font-bold mb-12">
+          Reach out for a new project or just say hello
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+          {/* Left Column: Contact Form */}
+          <div className="contact-form">
+            <h3 className="text-xl font-bold mb-6">Send Us a Message</h3>
+            <form>
+              <div className="form-field mb-4">
+                <label htmlFor="name" className="block text-gray-400">
+                  Your Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  className="w-full bg-gray-800 text-white border border-gray-700 rounded px-4 py-2 focus:outline-none focus:border-green-500"
+                  placeholder="Your Name"
+                />
+              </div>
+              <div className="form-field mb-4">
+                <label htmlFor="email" className="block text-gray-400">
+                  Your Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  className="w-full bg-gray-800 text-white border border-gray-700 rounded px-4 py-2 focus:outline-none focus:border-green-500"
+                  placeholder="Your Email"
+                />
+              </div>
+              <div className="form-field mb-4">
+                <label htmlFor="subject" className="block text-gray-400">
+                  Subject
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  className="w-full bg-gray-800 text-white border border-gray-700 rounded px-4 py-2 focus:outline-none focus:border-green-500"
+                  placeholder="Subject"
+                />
+              </div>
+              <div className="form-field mb-8">
+                <label htmlFor="message" className="block text-gray-400">
+                  Your Message
+                </label>
+                <textarea
+                  id="message"
+                  className="w-full bg-gray-800 text-white border border-gray-700 rounded px-4 py-2 focus:outline-none focus:border-green-500"
+                  placeholder="Your Message"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              >
+                SUBMIT
+              </button>
+            </form>
+          </div>
+
+          {/* Right Column: Contact Info */}
+          <div className="contact-info">
+            <h3 className="text-xl font-bold mb-6">Contact Info</h3>
+            <h4 className="text-gray-400 mb-4">Where to Find Us</h4>
+            <p className="text-gray-400 mb-4">
+              1600 Amphitheatre Parkway <br />
+              Mountain View, CA <br />
+              94043 US
+            </p>
+            <h4 className="text-gray-400 mb-4">Email Us At</h4>
+            <p className="text-gray-400 mb-4">
+              contact@glintsite.com <br />
+              info@glintsite.com
+            </p>
+            <h4 className="text-gray-400 mb-4">Call Us At</h4>
+            <p className="text-gray-400">
+              Phone: (+63) 555 1212 <br />
+              Mobile: (+63) 555 0100 <br />
+              Fax: (+63) 555 0101
+            </p>
+            {/* Social Media Icons */}
+            <div className="social-media mt-4">
+              <a href="#" className="text-gray-400">
+                <i className="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" className="text-gray-400">
+                <i className="fab fa-twitter"></i>
+              </a>
+              <a href="#" className="text-gray-400">
+                <i className="fab fa-instagram"></i>
+              </a>
+              <a href="#" className="text-gray-400">
+                <i className="fab fa-behance"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    
       </main>
     </div>
   );

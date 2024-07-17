@@ -58,7 +58,7 @@
 .section-title {
   /* font-size: 2.5rem; */
   text-align: left;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   text-shadow: 10px;
 }
 
@@ -159,4 +159,116 @@
 }
 .parent-container {
   width: 100%; /* Or a specific width value */
+}
+
+
+/* About.css */
+
+.about-section {
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+}
+
+.container {
+  max-width: 1200px; /* Adjust container width as needed */
+}
+
+.about-text p {
+  font-size: 1.1rem; /* Slightly larger font size for better readability */
+  line-height: 1.7; /* Adjust line height for better spacing */
+  margin-bottom: 1.5rem; /* More space between paragraphs */
+}
+
+.about-text span {
+  color: #42b883; /* Green color for company names */
+  font-weight: 600; /* Slightly bolder font weight */
+}
+
+.experience-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle white divider */
+  padding-bottom: 2rem; 
+  margin-bottom: 2rem; /* Add margin for spacing between items */
+}
+
+.experience-item h3 {
+  font-size: 1.6rem; /* Larger font size for company name */
+  margin-bottom: 0.5rem; 
+}
+
+.experience-item p {
+  font-size: 1rem; 
+  color: #b3b3b3; /* Lighter gray for role description */
+  line-height: 1.6;
+}
+
+.experience-item span {
+  font-size: 2rem; 
+  transition: transform 0.3s ease; /* Add a smooth transition for the icon */
+}
+
+.experience-item:hover span {
+  transform: rotate(90deg); /* Rotate the plus/minus icon on hover */
+}
+.line {
+max-width: 1200px;
+  background-color: #ffffff; /* Dark gray */
+  height: 2px; 
+
+}
+
+
+.known-for-title {
+  text-align: left; /* Align title to the left */
+}
+
+.known-for-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem; /* Add spacing from title */
+}
+
+.known-for-item {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+/* Contact.css */
+
+.contact-section {
+  background-color: #000;
+  color: #fff;
+  padding: 80px 0;
+  position: relative; /* To position the year label */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.contact-title {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+
+/* Add hover effect to the social media icons */
+.social-media a {
+  margin-right: 10px;
+  transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+  color: #4caf50; /* Green hover color */
+}
+
+/* Make the submit button green */
+.bg-green-500 {
+  background-color: #4caf50;
+}
+
+/* Add a hover effect to the submit button */
+.bg-green-600 {
+  background-color: #3e8e41; /* Darker green on hover */
 }
