@@ -1,4 +1,4 @@
-import { Content } from "@/components/component/content";
+import  Content  from "@/components/component/content";
 import React from 'react';
 
 

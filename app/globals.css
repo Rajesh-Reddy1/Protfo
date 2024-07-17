@@ -36,14 +36,15 @@
     @apply bg-background text-foreground font-body;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-heading;
   }
-
-  
 }
-
-
 
 .projects-section {
   padding: 80px 0;
@@ -56,13 +57,9 @@
 }
 
 .section-title {
-  /* font-size: 2.5rem; */
-  text-align: left;
   margin-bottom: 40px;
   text-shadow: 10px;
 }
-
-
 
 .projects-grid {
   display: flex;
@@ -71,27 +68,21 @@
 
 .project-card {
   display: flex;
-  margin-bottom: 80px;
-}
-
-.project-card {
-  display: flex;
-  flex-direction: column; /* Stack image and info vertically */
+  flex-direction: column; 
   margin-bottom: 80px;
 }
 
 .project-right {
-  align-items: flex-end; /* Align content to the right */
+  align-items: flex-end; 
 }
 
-/* Alignment for odd-indexed projects */
 .project-left {
-  align-items: flex-start; /* Align content to the left */
+  align-items: flex-start; 
 }
 
 .project-image-container {
   position: relative;
-  width: 100%; /* Adjust as needed */
+  width: 100%; 
 }
 
 .project-image {
@@ -101,7 +92,6 @@
   object-fit: cover;
   transition: transform 0.3s ease; 
 }
-
 
 .project-status {
   position: absolute;
@@ -114,117 +104,120 @@
   font-weight: bold;
   transition: transform 0.3s ease; 
 }
-.project-image-container:hover .project-image ,.project-status {
+
+.project-image-container:hover .project-image,
+.project-image-container:hover .project-status {
   transform: scale(1.1); 
 }
 
 .project-info {
   width: 100%; 
   padding: 20px;
-  text-align: center; /* Center the title and description */
+  text-align: center; 
 }
 
 .project-title {
-  font-size: 1.5rem; /* Smaller font size */
-  margin-bottom: 5px; /* Reduced margin */
+  font-size: 1.5rem; 
+  margin-bottom: 5px; 
 }
 
 .project-description {
-  font-size: 0.9rem; /* Smaller font size */
+  font-size: 0.9rem; 
   line-height: 1.4;
 }
-.logo-image{
+
+.logo-image {
   width: 50px;
   height: auto;
   @apply text-2xl font-bold cursor-pointer; 
   transition: transform 0.3s ease;
-
 }
+
 .logo-image:hover {
   transform: scale(1.1); 
 }
-.menu{
+
+.menu {
   @apply text-2xl font-bold cursor-pointer; 
   transition: transform 0.3s ease;
-
 }
-.menu:hover{
+
+.menu:hover {
   transform: scale(1.1); 
 }
 
 .header-container {
   display: flex;
-  justify-content: space-between; /* Distribute items with space between */
-  align-items: center; /* Align items vertically (baseline by default) */
-}
-.parent-container {
-  width: 100%; /* Or a specific width value */
+  justify-content: space-between; 
+  align-items: center; 
 }
 
+.parent-container {
+  width: 100%; 
+}
 
 /* About.css */
 
 .about-section {
-  background-color: #000; /* Black background */
-  color: #fff; /* White text */
+  background-color: #000; 
+  color: #fff; 
 }
 
 .container {
-  max-width: 1200px; /* Adjust container width as needed */
+  max-width: 1200px; 
 }
 
 .about-text p {
-  font-size: 1.1rem; /* Slightly larger font size for better readability */
-  line-height: 1.7; /* Adjust line height for better spacing */
-  margin-bottom: 1.5rem; /* More space between paragraphs */
+  font-size: 1.1rem; 
+  line-height: 1.7; 
+  margin-bottom: 1.5rem; 
 }
 
 .about-text span {
-  color: #42b883; /* Green color for company names */
-  font-weight: 600; /* Slightly bolder font weight */
+  color: #42b883; 
+  font-weight: 600; 
 }
 
 .experience-item {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle white divider */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
   padding-bottom: 2rem; 
-  margin-bottom: 2rem; /* Add margin for spacing between items */
+  margin-bottom: 2rem; 
 }
 
 .experience-item h3 {
-  font-size: 1.6rem; /* Larger font size for company name */
+  font-size: 1.6rem; 
   margin-bottom: 0.5rem; 
 }
 
 .experience-item p {
   font-size: 1rem; 
-  color: #b3b3b3; /* Lighter gray for role description */
+  color: #b3b3b3; 
   line-height: 1.6;
 }
 
 .experience-item span {
   font-size: 2rem; 
-  transition: transform 0.3s ease; /* Add a smooth transition for the icon */
+  transition: transform 0.3s ease; 
 }
 
 .experience-item:hover span {
-  transform: rotate(90deg); /* Rotate the plus/minus icon on hover */
+  transform: rotate(90deg); 
 }
+
 .line {
-max-width: 1200px;
-  background-color: #ffffff; /* Dark gray */
+  max-width: 1200px;
+  background-color: #ffffff; 
   height: 2px; 
-
 }
-
 
 .known-for-title {
-  text-align: left; /* Align title to the left */
+  text-align: left; 
 }
 
 .known-for-list {
   list-style: none;
   padding: 0;
-  margin-top: 1rem; /* Add spacing from title */
+  margin-top: 1rem; 
 }
 
 .known-for-item {
@@ -232,13 +225,14 @@ max-width: 1200px;
   font-weight: 600;
   margin-bottom: 0.8rem;
 }
+
 /* Contact.css */
 
 .contact-section {
   background-color: #000;
   color: #fff;
   padding: 80px 0;
-  position: relative; /* To position the year label */
+  position: relative; 
 }
 
 .container {
@@ -252,23 +246,160 @@ max-width: 1200px;
   margin-bottom: 80px;
 }
 
+/* Contact.css */
 
-/* Add hover effect to the social media icons */
-.social-media a {
-  margin-right: 10px;
-  transition: color 0.3s ease;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.social-media a:hover {
-  color: #4caf50; /* Green hover color */
+body {
+  background: linear-gradient(to right, #ea1d6f 0%, #eb466b 100%);
+  font-size: 12px;
 }
 
-/* Make the submit button green */
-.bg-green-500 {
-  background-color: #4caf50;
+button,
+input {
+  font-weight: 700;
+  letter-spacing: 1.4px;
 }
 
-/* Add a hover effect to the submit button */
-.bg-green-600 {
-  background-color: #3e8e41; /* Darker green on hover */
+.contact-section {
+  background-color: #000;
+  color: #fff;
+  padding: 80px 0;
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.container-contact1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.contact1-pic {
+  width: 40%;
+  height: auto;
+}
+
+.contact1-pic img {
+  width: 80%;
+  height: auto;
+}
+
+.contact1-form {
+  width: 50%;
+}
+
+.contact1-form-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.wrap-input1 {
+  position: relative;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.input1 {
+  width: 100%;
+  padding: 10px 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #666;
+  color: #ddd;
+  font-size: 14px;
+  text-transform: uppercase;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input1::placeholder {
+  color: #666;
+}
+
+.input1:focus {
+  border-bottom-color: #ddd;
+}
+
+.shadow-input1 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #666;
+  transition: background-color 0.2s;
+}
+
+.input1:focus ~ .shadow-input1 {
+  background-color: #ddd;
+}
+
+.container-contact1-form-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.contact1-form-btn {
+  background: #4caf50;
+  border: none;
+  color: white;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.contact1-form-btn:hover {
+  background: #3e8e41;
+}
+
+.contact1-form-btn span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact1-form-btn i {
+  margin-left: 10px;
+}
+
+/* Tilt.js for Image Tilt Effect */
+.js-tilt {
+  perspective: 1000px;
+}
+
+.js-tilt img {
+  transition: transform 0.5s;
+}
+
+.js-tilt:hover img {
+  transform: rotateX(3deg) rotateY(5deg) scale(1.1);
+}
+
+/* Menu Item Styling */
+.menu-item {
+  @apply text-white hover:text-green-400 transition-colors duration-200; 
+}
+
+.menu-item.active {
+  @apply text-green-400; 
+  @apply font-bold; 
+}
+header.sticky {
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
 }
