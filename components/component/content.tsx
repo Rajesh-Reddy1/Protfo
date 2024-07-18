@@ -6,10 +6,10 @@
 // import { motion, useAnimation } from "framer-motion";
 // import { useInView } from "react-intersection-observer";
 
-// import logo from "./logo.png"; 
+// import logo from "./logo.png";
 // import img1 from "./img1.jpg";
 // import img2 from "./img2.png";
-// import msg from "./image.png"; 
+// import msg from "./image.png";
 
 // const projects = [
 //   {
@@ -259,7 +259,7 @@
 //         <div className="bg-black text-white min-h-screen">
 //           <header
 //             className={`flex items-center justify-between p-6 ${
-//               isSticky && showMenu ? "sticky top-0 z-10 bg-opacity-90 backdrop-blur-sm" : "" 
+//               isSticky && showMenu ? "sticky top-0 z-10 bg-opacity-90 backdrop-blur-sm" : ""
 //             }`}
 //           >
 //             <Link href="/">
@@ -291,9 +291,9 @@
 //             </nav>
 //           </header>
 
-//           <section 
+//           <section
 //             className="hero-section bg-black text-white flex flex-col justify-center items-center h-screen px-8 lg:px-16"
-//             id="home-section" 
+//             id="home-section"
 //             ref={homeRef}
 //           >
 //             <motion.div
@@ -332,7 +332,7 @@
 //                   Hyderabad, India <hr />
 //                 </span>
 //                 <Link
-//                   href="#projects-section" 
+//                   href="#projects-section"
 //                   className={`text-white ${activeMenu === "Projects" ? "active" : ""}`}
 //                   onClick={() => {
 //                     scrollToSection(projectsRef);
@@ -344,10 +344,10 @@
 //             </motion.div>
 //           </section>
 
-//           <section 
+//           <section
 //             className="projects-section relative"
-//             ref={projectsRef} 
-//             id="projects-section" 
+//             ref={projectsRef}
+//             id="projects-section"
 //           >
 //             <div className="line absolute top-0 left-0 right-0 mx-auto w-5/7 h-px bg-gray-100"></div>
 
@@ -370,7 +370,7 @@
 
 //           <section
 //             className="about-section bg-black text-white py-10 px-6 md:px-12 lg:px-24 relative min-h-screen "
-//             id="about-section" 
+//             id="about-section"
 //             ref={aboutRef}
 //           >
 //             <div className="line absolute top-0 left-0 right-0 mx-auto w-5/7 h-px bg-gray-100"></div>
@@ -382,15 +382,15 @@
 //                   </div>
 //                   <div className="md:w-1/2">
 //                     <Image
-//                       src={img2.src} 
-//                       alt="Rajesh" 
+//                       src={img2.src}
+//                       alt="Rajesh"
 //                       width={600}
 //                       height={400}
-//                       className="profile-image" 
+//                       className="profile-image"
 //                     />
 //                   </div>
 //                 </div>
-                
+
 //                 <div className="experience">
 //                   {aboutContent.map((item) => (
 //                     <p key={item.id} className="text-lg mb-6">
@@ -422,7 +422,7 @@
 //         <section
 //           className="about-section bg-black text-white py-8 px-6 md:px-12 lg:px-24 relative min-h-screen"
 //           ref={knowsRef}
-//           id="knows-section" 
+//           id="knows-section"
 //         >
 //           <div className=" line absolute top-0 left-0 right-0 mx-auto w-5/7 h-px bg-gray-100"></div>
 //           <div className="container mx-auto">
@@ -442,7 +442,7 @@
 //         <section
 //           className="about-section bg-black text-white py-10 px-6 md:px-12 lg:px-24 relative"
 //           ref={contactRef}
-//           id="contact-section" 
+//           id="contact-section"
 //         >
 //           <div className="  line absolute top-0 left-0 right-0 mx-auto w-5/7 h-px bg-gray-100"></div>
 //           <div className="section-title text-4xl font-bold text-center">
@@ -534,12 +534,12 @@
 //                   </button>
 //                 </div>
 //               </form>
-              
+
 //             </div>
 //           </div>
-          
+
 //         </section>
-        
+
 //       </div>
 //       <footer className="bg-black py-10 mt-16 relative">
 //             <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-4 ">
@@ -558,7 +558,6 @@
 //                 </p>
 //               </div>
 
-
 //               <div className="flex space-x-4">
 //                 <a
 //                   href="https://www.linkedin.com/in/rajesh-kumar-a1541b248/"
@@ -569,7 +568,7 @@
 //                   LinkedIn
 //                 </a>
 //                 <a
-//                   href="https://github.com/your-github-username" 
+//                   href="https://github.com/your-github-username"
 //                   target="_blank"
 //                   rel="noopener noreferrer"
 //                   className="text-gray-400 hover:text-green-400 transition-colors duration-200"
@@ -591,7 +590,7 @@
 
 //           </footer>
 //     </main>
-    
+
 //   </motion.div>
 // );
 // }
@@ -617,14 +616,6 @@
 //   );
 // }
 
-
-
-
-
-
-
-
-
 "use client";
 
 import { useEffect, useRef, useState } from "react";
@@ -633,10 +624,10 @@ import Link from "next/link";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-import logo from "./logo.png"; 
+import logo from "./logo.png";
 import img1 from "./img1.jpg";
 import img2 from "./img2.png";
-import msg from "./image.png"; 
+import msg from "./image.png";
 
 const projects = [
   {
@@ -656,7 +647,8 @@ const projects = [
   {
     id: 3,
     title: "Product Scrapper",
-    description: "  Extract product data (name, website, price, link) with 95% accuracy",
+    description:
+      "  Extract product data (name, website, price, link) with 95% accuracy",
     image: img2,
     status: " Completed",
   },
@@ -726,7 +718,7 @@ const knownForItems = [
   "More Personal and Engaging",
 ];
 
-function HoverWord({ children, className }:any) {
+function HoverWord({ children, className }: any) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -741,34 +733,39 @@ function HoverWord({ children, className }:any) {
     </span>
   );
 }
-
 const ProjectCard = ({ project, index }:any) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
+    threshold: 0.2, // Adjust this value to control when the animation triggers
+    triggerOnce: false // This ensures the animation occurs every time the element comes into view
   });
 
   useEffect(() => {
     if (inView) {
       controls.start("visible");
+    } else {
+      controls.start("hidden");
     }
   }, [controls, inView]);
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { 
+      opacity: 0, 
+      y: 50,
+      transition: { duration: 0.5 }
+    },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, delay: index * 0.2 },
-    },
+      transition: { duration: 0.5, delay: index * 0.1 }
+    }
   };
 
   return (
     <motion.div
       ref={ref}
-      initial="hidden"
       animate={controls}
+      initial="hidden"
       variants={cardVariants}
       className={`project-card ${
         index % 2 === 0 ? "project-right" : "project-left"
@@ -794,9 +791,7 @@ const ProjectCard = ({ project, index }:any) => {
     </motion.div>
   );
 };
-
 export default function Content() {
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -807,12 +802,34 @@ export default function Content() {
 
   const homeRef = useRef(null);
   const projectsRef = useRef(null);
-  const aboutRef = useRef(null);
+
   const knowsRef = useRef(null);
   const contactRef = useRef(null);
   const [showMenu, setShowMenu] = useState(false);
   const [expandedItems, setExpandedItems] = useState<number[]>([]);
 
+  const [aboutRef, aboutInView] = useInView({
+    triggerOnce: false,
+    threshold: 0.2,
+  });
+
+  const imageVariants = {
+    hidden: { opacity: 0, x: -100 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: { duration: 1.0, ease: "easeOut" }
+    },
+  };
+
+  const textVariants = {
+    hidden: { opacity: 0, x: 50 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: { duration: 1.0, ease: "easeOut" }
+    },
+  };
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 100) {
@@ -833,7 +850,7 @@ export default function Content() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleItem = (itemId:any) => {
+  const toggleItem = (itemId: any) => {
     setExpandedItems((prevExpanded) =>
       prevExpanded.includes(itemId)
         ? prevExpanded.filter((id) => id !== itemId)
@@ -841,7 +858,7 @@ export default function Content() {
     );
   };
 
-  const handleSubmit = (e:any) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     console.log("Form submitted:", { name, email, subject, message });
     setName("");
@@ -850,7 +867,7 @@ export default function Content() {
     setMessage("");
   };
 
-  const scrollToSection = (ref :any) => {
+  const scrollToSection = (ref: any) => {
     if (ref.current) {
       const startPosition = window.pageYOffset;
       const targetPosition = ref.current.offsetTop;
@@ -858,12 +875,10 @@ export default function Content() {
       const duration = 500;
       let start = performance.now();
 
-      const animation = (timestamp:any) => {
+      const animation = (timestamp: any) => {
         const progress = timestamp - start;
-        const easeInOutCubic = (t:any) =>
-          t < 0.5
-            ? 4 * t * t * t
-            : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+        const easeInOutCubic = (t: any) =>
+          t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
         const easedProgress = easeInOutCubic(progress / duration);
         window.scrollTo(0, startPosition + distance * easedProgress);
 
@@ -893,14 +908,16 @@ export default function Content() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.2 }}
       className="bg-black text-white"
     >
       <main className="align-middle px-6 md:px-12 lg:px-24 ">
         <div className="bg-black text-white min-h-screen">
           <header
             className={`flex items-center justify-between p-6 ${
-              isSticky && showMenu ? "sticky top-0 z-10 bg-opacity-90 backdrop-blur-sm" : "" 
+              isSticky && showMenu
+                ? "sticky top-0 z-10 bg-opacity-90 backdrop-blur-sm"
+                : ""
             }`}
           >
             <Link href="/">
@@ -914,33 +931,37 @@ export default function Content() {
             </Link>
             <nav className="flex items-center space-x-4">
               <ul className="flex space-x-4">
-                {["Home", "Projects", "About", "Knows", "Contact"].map((item) => (
-                  <li key={item} className="menu-item">
-                    <Link
-                      href={`#${item.toLowerCase()}-section`}
-                      className={`text-white ${activeMenu === item ? "active" : ""}`}
-                      onClick={() => {
-                        setActiveMenu(item);
-                        scrollToSection(eval(`${item.toLowerCase()}Ref`));
-                      }}
-                    >
-                      {item}
-                    </Link>
-                  </li>
-                ))}
+                {["Home", "Projects", "About", "Knows", "Contact"].map(
+                  (item) => (
+                    <li key={item} className="menu-item">
+                      <Link
+                        href={`#${item.toLowerCase()}-section`}
+                        className={`text-white ${
+                          activeMenu === item ? "active" : ""
+                        }`}
+                        onClick={() => {
+                          setActiveMenu(item);
+                          scrollToSection(eval(`${item.toLowerCase()}Ref`));
+                        }}
+                      >
+                        {item}
+                      </Link>
+                    </li>
+                  )
+                )}
               </ul>
             </nav>
           </header>
 
-          <section 
+          <section
             className="hero-section bg-black text-white flex flex-col justify-center items-center h-screen px-8 lg:px-16"
-            id="home-section" 
+            id="home-section"
             ref={homeRef}
           >
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 1 }}
               className="header-content text-center"
             >
               <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6">
@@ -973,8 +994,10 @@ export default function Content() {
                   Hyderabad, India <hr />
                 </span>
                 <Link
-                  href="#projects-section" 
-                  className={`text-white ${activeMenu === "Projects" ? "active" : ""}`}
+                  href="#projects-section"
+                  className={`text-white ${
+                    activeMenu === "Projects" ? "active" : ""
+                  }`}
                   onClick={() => {
                     scrollToSection(projectsRef);
                   }}
@@ -985,10 +1008,10 @@ export default function Content() {
             </motion.div>
           </section>
 
-          <section 
+          <section
             className="projects-section relative"
-            ref={projectsRef} 
-            id="projects-section" 
+            ref={projectsRef}
+            id="projects-section"
           >
             <div className="line absolute top-0 left-0 right-0 mx-auto w-5/7 h-px bg-gray-100"></div>
 
@@ -998,12 +1021,18 @@ export default function Content() {
                   <div className="section-title text-4xl font-bold">
                     Selected works
                   </div>
-                  <div className="section-title text-2xl font-thin">21'-24'</div>
+                  <div className="section-title text-2xl font-thin">
+                    21'-24'
+                  </div>
                 </div>
               </div>
               <div className="projects-grid">
                 {projects.map((project, index) => (
-                  <ProjectCard key={project.id} project={project} index={index} />
+                  <ProjectCard
+                    key={project.id}
+                    project={project}
+                    index={index}
+                  />
                 ))}
               </div>
             </div>
@@ -1016,36 +1045,48 @@ export default function Content() {
       id="about-section" 
       ref={aboutRef}
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: false }}
-      variants={fadeInUp}
+      animate={aboutInView ? "visible" : "hidden"}
     >
       <div className="line absolute top-0 left-0 right-0 mx-auto w-5/7 h-px bg-gray-100"></div>
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          <motion.div className="about-text text-left" variants={fadeInUp}>
-            <div className="section-title text-4xl font-bold">
+          <motion.div 
+            className="about-text text-left"
+            variants={imageVariants}
+          >
+            <div className="section-title text-4xl font-bold mb-6">
               About
             </div>
-            <div className="md:w-1/2">
+            <div className="h-full">
               <Image
                 src={img2.src} 
                 alt="Rajesh" 
-                width={600}
-                height={400}
-                className="profile-image" 
+                width={400}
+                height={600}
+                className="profile-image w-auto h-full" 
               />
             </div>
           </motion.div>
           
-          <motion.div className="experience" variants={staggerChildren}>
+          <motion.div 
+            className="experience"
+            variants={textVariants}
+          >
             {aboutContent.map((item) => (
-              <motion.p key={item.id} className="text-lg mb-6" variants={fadeInUp}>
+              <motion.p 
+                key={item.id} 
+                className="text-lg mb-6"
+                variants={textVariants}
+              >
                 {item.text}
               </motion.p>
             ))}
             {experience.map((item) => (
-              <motion.div key={item.id} className="experience-item mb-6" variants={fadeInUp}>
+              <motion.div 
+                key={item.id} 
+                className="experience-item mb-6"
+                variants={textVariants}
+              >
                 <div
                   className="flex items-center justify-between cursor-pointer"
                   onClick={() => toggleItem(item.id)}
@@ -1074,192 +1115,215 @@ export default function Content() {
         </div>
       </div>
     </motion.section>
-    <motion.section
-      className="about-section bg-black text-white py-8 px-6 md:px-12 lg:px-24 relative min-h-screen"
-      ref={knowsRef}
-      id="knows-section" 
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: false }}
-      variants={fadeInUp}
-    >
-      <div className="line absolute top-0 left-0 right-0 mx-auto w-5/7 h-px bg-gray-100"></div>
-      <div className="container mx-auto">
-        <motion.h3 className="known-for-title text-2xl text-gray-400 mb-6" variants={fadeInUp}>
-          What I'm known for
-        </motion.h3>
-        <motion.ul className="about-text text-right" variants={staggerChildren}>
-          {knownForItems.map((item, index) => (
-            <motion.li key={index} className="known-for-item" variants={fadeInUp}>
-              {item}
-            </motion.li>
-          ))}
-        </motion.ul>
-      </div>
-    </motion.section>
-
-
-    <motion.section
-      className="about-section bg-black text-white py-10 px-6 md:px-12 lg:px-24 relative"
-      ref={contactRef}
-      id="contact-section" 
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: false }}
-      variants={fadeInUp}
-    >
-      <div className="line absolute top-0 left-0 right-0 mx-auto w-5/7 h-px bg-gray-100"></div>
-      <motion.div className="section-title text-4xl font-bold text-center" variants={fadeInUp}>
-        Contact Us
-      </motion.div>
-      <motion.div className="section-title text-3xl font-bold text-center" variants={fadeInUp}>
-        Reach out for a new project or just say hello
-      </motion.div>
-      <div className="container mx-auto">
-        <div className="container-contact1">
-          <motion.div className="contact1-pic js-tilt" data-tilt="" variants={fadeInUp}>
-            <Image
-              src={msg}
-              alt="IMG"
-              width={500}
-              height={400}
-              priority
-            />
-          </motion.div>
-          <motion.form
-            className="contact1-form validate-form"
-            onSubmit={handleSubmit}
-            variants={staggerChildren}
+          <motion.section
+            className="about-section bg-black text-white py-8 px-6 md:px-12 lg:px-24 relative min-h-screen"
+            ref={knowsRef}
+            id="knows-section"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
+            variants={fadeInUp}
           >
-            <motion.span className="contact1-form-title" variants={fadeInUp}>Get in touch</motion.span>
+            <div className="line absolute top-0 left-0 right-0 mx-auto w-5/7 h-px bg-gray-100"></div>
+            <div className="container mx-auto">
+              <motion.h3
+                className="known-for-title text-2xl text-gray-400 mb-6"
+                variants={fadeInUp}
+              >
+                What I'm known for
+              </motion.h3>
+              <motion.ul
+                className="about-text text-right"
+                variants={staggerChildren}
+              >
+                {knownForItems.map((item, index) => (
+                  <motion.li
+                    key={index}
+                    className="known-for-item"
+                    variants={fadeInUp}
+                  >
+                    {item}
+                  </motion.li>
+                ))}
+              </motion.ul>
+            </div>
+          </motion.section>
+
+          <motion.section
+            className="about-section bg-black text-white py-10 px-6 md:px-12 lg:px-24 relative"
+            ref={contactRef}
+            id="contact-section"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
+            variants={fadeInUp}
+          >
+            <div className="line absolute top-0 left-0 right-0 mx-auto w-5/7 h-px bg-gray-100"></div>
             <motion.div
-              className="wrap-input1 validate-input"
-              data-validate="Name is required"
+              className="section-title text-4xl font-bold text-center"
               variants={fadeInUp}
             >
-              <input
-                className="input1"
-                type="text"
-                name="name"
-                placeholder="Name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-              <span className="shadow-input1"></span>
+              Contact Us
             </motion.div>
             <motion.div
-              className="wrap-input1 validate-input"
-              data-validate="Valid email is required: ex@abc.xyz"
+              className="section-title text-3xl font-bold text-center"
               variants={fadeInUp}
             >
-              <input
-                className="input1"
-                type="text"
-                name="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <span className="shadow-input1"></span>
+              Reach out for a new project or just say hello
             </motion.div>
-            <motion.div
-              className="wrap-input1 validate-input"
-              data-validate="Subject is required"
-              variants={fadeInUp}
-            >
-              <input
-                className="input1"
-                type="text"
-                name="subject"
-                placeholder="Subject"
-                value={subject}
-                onChange={(e) => setSubject(e.target.value)}
-              />
-              <span className="shadow-input1"></span>
-            </motion.div>
-            <motion.div
-              className="wrap-input1 validate-input"
-              data-validate="Message is required"
-              variants={fadeInUp}
-            >
-              <textarea
-                className="input1"
-                name="message"
-                placeholder="Message"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-              ></textarea>
-              <span className="shadow-input1"></span>
-            </motion.div>
-            <motion.div className="container-contact1-form-btn" variants={fadeInUp}>
-              <button className="contact1-form-btn" type="submit">
-                <span>
-                  Send Email
-                  <i
-                    className="fa fa-long-arrow-right"
-                    aria-hidden="true"
-                  ></i>
-                </span>
-              </button>
-            </motion.div>
-          </motion.form>
-        </div>
-      </div>
-    </motion.section>
+            <div className="container mx-auto">
+              <div className="container-contact1">
+                <motion.div
+                  className="contact1-pic js-tilt"
+                  data-tilt=""
+                  variants={fadeInUp}
+                >
+                  <Image
+                    src={msg}
+                    alt="IMG"
+                    width={500}
+                    height={400}
+                    priority
+                  />
+                </motion.div>
+                <motion.form
+                  className="contact1-form validate-form"
+                  onSubmit={handleSubmit}
+                  variants={staggerChildren}
+                >
+                  <motion.span
+                    className="contact1-form-title"
+                    variants={fadeInUp}
+                  >
+                    Get in touch
+                  </motion.span>
+                  <motion.div
+                    className="wrap-input1 validate-input"
+                    data-validate="Name is required"
+                    variants={fadeInUp}
+                  >
+                    <input
+                      className="input1"
+                      type="text"
+                      name="name"
+                      placeholder="Name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                    />
+                    <span className="shadow-input1"></span>
+                  </motion.div>
+                  <motion.div
+                    className="wrap-input1 validate-input"
+                    data-validate="Valid email is required: ex@abc.xyz"
+                    variants={fadeInUp}
+                  >
+                    <input
+                      className="input1"
+                      type="text"
+                      name="email"
+                      placeholder="Email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <span className="shadow-input1"></span>
+                  </motion.div>
+                  <motion.div
+                    className="wrap-input1 validate-input"
+                    data-validate="Subject is required"
+                    variants={fadeInUp}
+                  >
+                    <input
+                      className="input1"
+                      type="text"
+                      name="subject"
+                      placeholder="Subject"
+                      value={subject}
+                      onChange={(e) => setSubject(e.target.value)}
+                    />
+                    <span className="shadow-input1"></span>
+                  </motion.div>
+                  <motion.div
+                    className="wrap-input1 validate-input"
+                    data-validate="Message is required"
+                    variants={fadeInUp}
+                  >
+                    <textarea
+                      className="input1"
+                      name="message"
+                      placeholder="Message"
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                    ></textarea>
+                    <span className="shadow-input1"></span>
+                  </motion.div>
+                  <motion.div
+                    className="container-contact1-form-btn"
+                    variants={fadeInUp}
+                  >
+                    <button className="contact1-form-btn" type="submit">
+                      <span>
+                        Send Email
+                        <i
+                          className="fa fa-long-arrow-right"
+                          aria-hidden="true"
+                        ></i>
+                      </span>
+                    </button>
+                  </motion.div>
+                </motion.form>
+              </div>
+            </div>
+          </motion.section>
         </div>
         <footer className="bg-black py-10 mt-16 relative">
-            <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-4 ">
-              <div className="mb-6 md:mb-0">
-                <Link href="/">
-                  <Image
-                    src={logo}
-                    alt="Logo"
-                    width={100} // Adjust width as needed
-                    height={50} // Adjust height as needed
-                    className="logo-image align-bottom"
-                  />
-                </Link>
-                <p className="text-gray-400 mt-2">
-                  © 2023 Rajesh. All rights reserved.
-                </p>
-              </div>
-
-
-              <div className="flex space-x-4">
-                <a
-                  href="https://www.linkedin.com/in/rajesh-kumar-a1541b248/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-green-400 transition-colors duration-200"
-                >
-                  LinkedIn
-                </a>
-                <a
-                  href="https://github.com/your-github-username" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-green-400 transition-colors duration-200"
-                >
-                  GitHub
-                </a>
-                <a
-                  href="https://www.instagram.com/your-instagram-username"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-green-400 transition-colors duration-200"
-                >
-                  Instagram
-                </a>
-              </div>
-
+          <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-4 ">
+            <div className="mb-6 md:mb-0">
+              <Link href="/">
+                <Image
+                  src={logo}
+                  alt="Logo"
+                  width={100} // Adjust width as needed
+                  height={50} // Adjust height as needed
+                  className="logo-image align-bottom"
+                />
+              </Link>
+              <p className="text-gray-400 mt-2">
+                © 2023 Rajesh. All rights reserved.
+              </p>
             </div>
-            <div className="  line absolute top-0 left-0 right-0 mx-auto w-5/7 h-px bg-gray-100"></div>
 
-          </footer>
-    </main>
-    
-  </motion.div>
-);
+            <div className="flex space-x-4">
+              <a
+                href="https://www.linkedin.com/in/rajesh-kumar-a1541b248/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-green-400 transition-colors duration-200"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="https://github.com/your-github-username"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-green-400 transition-colors duration-200"
+              >
+                GitHub
+              </a>
+              <a
+                href="https://www.instagram.com/your-instagram-username"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-green-400 transition-colors duration-200"
+              >
+                Instagram
+              </a>
+            </div>
+          </div>
+          <div className="  line absolute top-0 left-0 right-0 mx-auto w-5/7 h-px bg-gray-100"></div>
+        </footer>
+      </main>
+    </motion.div>
+  );
 }
 
 function MenuIcon(props: any) {
@@ -1281,4 +1345,4 @@ function MenuIcon(props: any) {
       <line x1="4" x2="20" y1="18" y2="18" />
     </svg>
   );
-} 
+}
