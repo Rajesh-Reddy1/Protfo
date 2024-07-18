@@ -621,7 +621,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation } from "framer-motion"
 import { useInView } from "react-intersection-observer";
 
 import logo from "./logo.png";
