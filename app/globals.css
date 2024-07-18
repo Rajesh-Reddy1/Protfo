@@ -459,3 +459,45 @@ footer {
 .profile-image:hover {
   transform: rotateX(3deg) rotateY(5deg) scale(1.1);
 }
+/* ... (Your existing styles) */
+
+/* Dark Mode Styles */
+.dark {
+  /* Background Colors */
+  --background: 240 10% 3.9%; /* Dark background */
+  --card: 240 10% 3.9%; /* Dark card background */
+  --muted: 240 5.9% 10%; /* Dark muted background */
+
+  /* Text Colors */
+  --foreground: 0 0% 98%; /* Light text on dark background */
+  --card-foreground: 0 0% 98%; /* Light text on dark card */
+  --muted-foreground: 0 0% 98%; /* Light text on dark muted */
+  --primary-foreground: 240 5.9% 10%; /* Dark text on light primary */
+  --accent-foreground: 240 5.9% 10%; /* Dark text on light accent */
+}
+
+
+.dark .line {
+  background-color: rgba(255, 255, 255, 0.1); /* Light gray line on dark */
+}
+
+.dark .project-status {
+  color: white; /* Make project status text white on dark */
+}
+
+.dark .known-for-title {
+  color: rgba(255, 255, 255, 0.6); /* Light gray title on dark */
+}
+
+.dark .known-for-item {
+  color: white; /* Make known for item text white on dark */
+}
+
+.dark .contact-title {
+  color: white; /* Make contact title text white on dark */
+}
+
+.dark .contact1-pic img {
+  filter: brightness(0.8); /* Make the image slightly darker on dark mode */
+}
+

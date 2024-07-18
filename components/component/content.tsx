@@ -628,6 +628,7 @@ import logo from "./logo.png";
 import img1 from "./img1.jpg";
 import img2 from "./img2.png";
 import msg from "./image.png";
+import {useRouter} from "next/navigation";
 
 const projects = [
   {
@@ -734,6 +735,7 @@ function HoverWord({ children, className }: any) {
   );
 }
 const ProjectCard = ({ project, index }:any) => {
+  const router =useRouter();
   const controls = useAnimation();
   const [ref, inView] = useInView({
     threshold: 0.2, // Adjust this value to control when the animation triggers
@@ -799,7 +801,7 @@ export default function Content() {
   const [activeMenu, setActiveMenu] = useState("");
   const [isSticky, setIsSticky] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-
+  const router =useRouter();
   const homeRef = useRef(null);
   const projectsRef = useRef(null);
 
@@ -966,7 +968,7 @@ export default function Content() {
             >
               <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6">
                 <HoverWord>{"I'm"}</HoverWord>{" "}
-                <HoverWord className="text-green-500 hover:text-red-900">
+                <HoverWord className="text-green-500 hover:text-blue-900">
                   Rajesh
                 </HoverWord>
                 , <HoverWord>a</HoverWord>{" "}
@@ -980,11 +982,11 @@ export default function Content() {
                 <HoverWord>everything.</HoverWord>
                 <br />
                 <HoverWord>Currently</HoverWord> <HoverWord>at</HoverWord>{" "}
-                <HoverWord className="text-green-500 hover:text-red-900">
+                <HoverWord className="text-green-500 hover:text-blue-900">
                   ReactJs
                 </HoverWord>
                 , <HoverWord>previously</HoverWord> <HoverWord>at</HoverWord>{" "}
-                <HoverWord className="text-green-500 hover:text-red-900">
+                <HoverWord className="text-green-500 hover:text-900">
                   Python
                 </HoverWord>
                 .
@@ -1029,16 +1031,17 @@ export default function Content() {
               <div className="projects-grid">
                 {projects.map((project, index) => (
                   <ProjectCard
-                    key={project.id}
-                    project={project}
-                    index={index}
-                  />
+                  key={project.id}
+                  onClick={() => {  
+    router.push(`./projects/${index}`); // Navigate to the project page
+  }} 
+                  project={project}
+                  index={index}
+                />
                 ))}
               </div>
             </div>
           </section>
-
-          {/* --- Animations from "About" Section to the end --- */}
 
           <motion.section
       className="about-section bg-black text-white py-10 px-6 md:px-12 lg:px-24 relative min-h-screen"
