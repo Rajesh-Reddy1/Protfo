@@ -965,7 +965,7 @@ export default function Content() {
               className="header-content text-center"
             >
               <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6">
-                <HoverWord>I'm</HoverWord>{" "}
+                <HoverWord>{"I'm"}</HoverWord>{" "}
                 <HoverWord className="text-green-500 hover:text-red-900">
                   Rajesh
                 </HoverWord>
@@ -1022,7 +1022,7 @@ export default function Content() {
                     Selected works
                   </div>
                   <div className="section-title text-2xl font-thin">
-                    21'-24'
+                    {"21'-24'"}
                   </div>
                 </div>
               </div>
@@ -1130,7 +1130,7 @@ export default function Content() {
                 className="known-for-title text-2xl text-gray-400 mb-6"
                 variants={fadeInUp}
               >
-                What I'm known for
+                What {"I'm"} known for
               </motion.h3>
               <motion.ul
                 className="about-text text-right"
