@@ -454,7 +454,8 @@ footer {
   border-radius: 10px;
   object-fit: cover;
   transition: transform 0.5s;
+  object-fit: cover;
 }
-.profile-image:hover{
+.profile-image:hover {
   transform: rotateX(3deg) rotateY(5deg) scale(1.1);
 }
