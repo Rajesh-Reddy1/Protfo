@@ -69,7 +69,7 @@
 .project-card {
   display: flex;
   flex-direction: column; 
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 
 .project-right {
@@ -161,6 +161,7 @@
 .about-section {
   background-color: #000; 
   color: #fff; 
+  padding-top: 70px;
 }
 
 .container {
@@ -221,11 +222,19 @@
 }
 
 .known-for-item {
-  font-size: 2rem;
+  font-size: 2.5rem; /* Large font size for larger screens */
   font-weight: 600;
   margin-bottom: 0.8rem;
-}
 
+  /* Responsive Font Size Adjustment */
+  @media (max-width: 768px) {
+    font-size: 1.8rem; /* Smaller font size for medium screens */
+  }
+
+  @media (max-width: 480px) { 
+    font-size: 1.5rem; /* Even smaller font size for small screens */
+  }
+}
 /* Contact.css */
 
 .contact-section {
@@ -259,7 +268,9 @@
 body {
   background: linear-gradient(to right, #ea1d6f 0%, #eb466b 100%);
   font-size: 12px;
+  
 }
+
 
 button,
 input {
@@ -394,6 +405,11 @@ input {
 /* Menu Item Styling */
 .menu-item {
   @apply text-white hover:text-green-400 transition-colors duration-200; 
+  transition: transform 0.2s;
+}
+.menu-item:hover{
+  transform: scale(1.1)
+  
 }
 
 .menu-item.active {
@@ -401,5 +417,44 @@ input {
   @apply font-bold; 
 }
 header.sticky {
+  
   background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+  @apply md:h-16;
+}
+/* styles.css */
+
+/* ... your existing CSS */
+/* ... your existing CSS */
+
+footer {
+  background-color: #101012;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    text-align: left;
+  }
+}
+
+.logo-image {
+  display: flex;
+  width: 50px;
+  height: auto;
+  @apply text-2xl font-bold cursor-pointer;
+  transition: transform 0.3s ease;
+}
+
+.logo-image:hover {
+  transform: scale(1.1);
+}
+.profile-image{
+  width: 1000%;
+  height: 500px; 
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.profile-image:hover{
+  transform: rotateX(3deg) rotateY(5deg) scale(1.1);
 }
