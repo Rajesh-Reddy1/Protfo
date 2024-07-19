@@ -5,12 +5,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowLeftIcon, MoonIcon, SunIcon, MenuIcon } from "lucide-react";
-import logo from "@/components/component/logo.png";
-import img1 from "@/components/component/img1.jpg";
-import img2 from "./img2.png";
-import msg from "@/components/component/image.png";
+import logo from "@/app/component/logo.png";
+import img1 from "@/app/component/img1.jpg";
+// import img2 from "./img2.png";
+import msg from "@/app/component/image.png";
 import "@/app/globals.css";
-export default function Page() {
+
+
+export default function Project3() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const projectData = {
     title: "Personal Finance and Productivity App",
@@ -48,10 +50,10 @@ export default function Page() {
   };
 
   return (
-    <div className={`flex flex-col min-h-screen ${isDarkMode ? "dark" : ""}`}>
+    <div className={`flex flex-col min-h-screen ${isDarkMode ? "" : "dark"}`}>
       <header className="px-4 lg:px-6 h-14 flex items-center justify-between bg-background text-foreground">
         <Link
-          href="#"
+          href="/"
           className="flex items-center justify-center"
           prefetch={false}
         >
@@ -63,9 +65,12 @@ export default function Page() {
           className="inline-flex h-9 items-center justify-center rounded-md bg-muted px-4 text-sm font-medium text-muted-foreground shadow-sm transition-colors hover:bg-muted/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
         >
           {isDarkMode ? (
-            <SunIcon className="size-5" />
-          ) : (
             <MoonIcon className="size-5" />
+          ) : (
+            <SunIcon className="size-5" />
+            
+            
+            
           )}
           <span className="sr-only">Toggle dark mode</span>
         </button>
@@ -205,12 +210,12 @@ export default function Page() {
             <div className="grid max-w-[1300px] mx-auto gap-4 px-4 sm:px-6 md:px-10 md:grid-cols-2 md:gap-16">
               <div className="flex flex-col items-start space-y-4">
                 <h3 className="text-3xl font-bold tracking-tighter sm:text-4xl">
-                  Let's Talk
+                  {"Let's Talk"}
                 </h3>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  I'm always excited to discuss new projects and collaborate
-                  with talented teams. Feel free to reach out via email or
-                  connect with me on LinkedIn.
+                  {
+                    "I'm always excited to discuss new projects and collaborate with talented teams. Feel free to reach out via email or connect with me on LinkedIn."
+                  }
                 </p>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Link

@@ -621,14 +621,14 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useAnimation } from "framer-motion"
+import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 import logo from "./logo.png";
 import img1 from "./img1.jpg";
 import img2 from "./img2.png";
 import msg from "./image.png";
-import {useRouter} from "next/navigation";
+import { useRouter } from "next/navigation";
 
 const projects = [
   {
@@ -734,12 +734,12 @@ function HoverWord({ children, className }: any) {
     </span>
   );
 }
-const ProjectCard = ({ project, index }:any) => {
-  const router =useRouter();
+const ProjectCard = ({ project, index }: any) => {
+  const router = useRouter();
   const controls = useAnimation();
   const [ref, inView] = useInView({
-    threshold: 0.2, // Adjust this value to control when the animation triggers
-    triggerOnce: false // This ensures the animation occurs every time the element comes into view
+    threshold: 0.2, 
+    triggerOnce: false, 
   });
 
   useEffect(() => {
@@ -751,16 +751,16 @@ const ProjectCard = ({ project, index }:any) => {
   }, [controls, inView]);
 
   const cardVariants = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       y: 50,
-      transition: { duration: 0.5 }
+      transition: { duration: 0.5 },
     },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, delay: index * 0.1 }
-    }
+      transition: { duration: 0.5, delay: index * 0.1 },
+    },
   };
 
   return (
@@ -772,6 +772,9 @@ const ProjectCard = ({ project, index }:any) => {
       className={`project-card ${
         index % 2 === 0 ? "project-right" : "project-left"
       }`}
+      onClick={() => {
+        router.push(`./pro${project.id}`);
+      }}
     >
       <div className="project-content">
         <div className="project-image-container">
@@ -801,7 +804,7 @@ export default function Content() {
   const [activeMenu, setActiveMenu] = useState("");
   const [isSticky, setIsSticky] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const router =useRouter();
+  const router = useRouter();
   const homeRef = useRef(null);
   const projectsRef = useRef(null);
 
@@ -817,19 +820,19 @@ export default function Content() {
 
   const imageVariants = {
     hidden: { opacity: 0, x: -100 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       x: 0,
-      transition: { duration: 1.0, ease: "easeOut" }
+      transition: { duration: 1.0, ease: "easeOut" },
     },
   };
 
   const textVariants = {
     hidden: { opacity: 0, x: 50 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       x: 0,
-      transition: { duration: 1.0, ease: "easeOut" }
+      transition: { duration: 1.0, ease: "easeOut" },
     },
   };
   useEffect(() => {
@@ -986,7 +989,7 @@ export default function Content() {
                   ReactJs
                 </HoverWord>
                 , <HoverWord>previously</HoverWord> <HoverWord>at</HoverWord>{" "}
-                <HoverWord className="text-green-500 hover:text-900">
+                <HoverWord className="text-green-500 hover:text-blue-900">
                   Python
                 </HoverWord>
                 .
@@ -1031,93 +1034,85 @@ export default function Content() {
               <div className="projects-grid">
                 {projects.map((project, index) => (
                   <ProjectCard
-                  key={project.id}
-                  onClick={() => {  
-    router.push(`./projects/${index}`); // Navigate to the project page
-  }} 
-                  project={project}
-                  index={index}
-                />
+                    key={project.id}
+                    project={project}
+                    index={index}
+                  />
                 ))}
               </div>
             </div>
           </section>
 
           <motion.section
-      className="about-section bg-black text-white py-10 px-6 md:px-12 lg:px-24 relative min-h-screen"
-      id="about-section" 
-      ref={aboutRef}
-      initial="hidden"
-      animate={aboutInView ? "visible" : "hidden"}
-    >
-      <div className="line absolute top-0 left-0 right-0 mx-auto w-5/7 h-px bg-gray-100"></div>
-      <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          <motion.div 
-            className="about-text text-left"
-            variants={imageVariants}
+            className="about-section bg-black text-white py-10 px-6 md:px-12 lg:px-24 relative min-h-screen"
+            id="about-section"
+            ref={aboutRef}
+            initial="hidden"
+            animate={aboutInView ? "visible" : "hidden"}
           >
-            <div className="section-title text-4xl font-bold mb-6">
-              About
-            </div>
-            <div className="h-full">
-              <Image
-                src={img2.src} 
-                alt="Rajesh" 
-                width={400}
-                height={600}
-                className="profile-image w-auto h-full" 
-              />
-            </div>
-          </motion.div>
-          
-          <motion.div 
-            className="experience"
-            variants={textVariants}
-          >
-            {aboutContent.map((item) => (
-              <motion.p 
-                key={item.id} 
-                className="text-lg mb-6"
-                variants={textVariants}
-              >
-                {item.text}
-              </motion.p>
-            ))}
-            {experience.map((item) => (
-              <motion.div 
-                key={item.id} 
-                className="experience-item mb-6"
-                variants={textVariants}
-              >
-                <div
-                  className="flex items-center justify-between cursor-pointer"
-                  onClick={() => toggleItem(item.id)}
+            <div className="line absolute top-0 left-0 right-0 mx-auto w-5/7 h-px bg-gray-100"></div>
+            <div className="container mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <motion.div
+                  className="about-text text-left"
+                  variants={imageVariants}
                 >
-                  <h3 className="text-xl font-bold">
-                    {item.company}
-                  </h3>
-                  <span className="text-2xl transition-transform duration-300 transform">
-                    {expandedItems.includes(item.id) ? "-" : "+"}{" "}
-                  </span>
-                </div>
-                {expandedItems.includes(item.id) && (
-                  <motion.p 
-                    className="text-gray-400 mt-2"
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    {item.role}
-                  </motion.p>
-                )}
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </div>
-    </motion.section>
+                  <div className="section-title text-4xl font-bold mb-6">
+                    About
+                  </div>
+                  <div className="h-full">
+                    <Image
+                      src={img2.src}
+                      alt="Rajesh"
+                      width={400}
+                      height={600}
+                      className="profile-image w-auto h-full"
+                    />
+                  </div>
+                </motion.div>
+
+                <motion.div className="experience" variants={textVariants}>
+                  {aboutContent.map((item) => (
+                    <motion.p
+                      key={item.id}
+                      className="text-lg mb-6"
+                      variants={textVariants}
+                    >
+                      {item.text}
+                    </motion.p>
+                  ))}
+                  {experience.map((item) => (
+                    <motion.div
+                      key={item.id}
+                      className="experience-item mb-6"
+                      variants={textVariants}
+                    >
+                      <div
+                        className="flex items-center justify-between cursor-pointer"
+                        onClick={() => toggleItem(item.id)}
+                      >
+                        <h3 className="text-xl font-bold">{item.company}</h3>
+                        <span className="text-2xl transition-transform duration-300 transform">
+                          {expandedItems.includes(item.id) ? "-" : "+"}{" "}
+                        </span>
+                      </div>
+                      {expandedItems.includes(item.id) && (
+                        <motion.p
+                          className="text-gray-400 mt-2"
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          {item.role}
+                        </motion.p>
+                      )}
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </div>
+            </div>
+          </motion.section>
           <motion.section
             className="about-section bg-black text-white py-8 px-6 md:px-12 lg:px-24 relative min-h-screen"
             ref={knowsRef}

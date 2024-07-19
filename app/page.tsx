@@ -1,4 +1,4 @@
-import  Content  from "@/components/component/content";
+import  Content  from "@/app/component/content";
 import React from 'react';
 // import  Project from "@/components/projects/1";
 
