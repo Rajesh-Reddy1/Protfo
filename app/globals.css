@@ -266,7 +266,7 @@
 }
 
 body {
-  background: linear-gradient(to right, #ea1d6f 0%, #eb466b 100%);
+  background: linear-gradient(to right, #000000 0%, #000000 100%);
   font-size: 12px;
   
 }
@@ -482,7 +482,7 @@ footer {
 }
 
 .dark .project-status {
-  color: white; /* Make project status text white on dark */
+  color: rgb(0, 0, 0); /* Make project status text white on dark */
 }
 
 .dark .known-for-title {
@@ -500,4 +500,16 @@ footer {
 .dark .contact1-pic img {
   filter: brightness(0.8); /* Make the image slightly darker on dark mode */
 }
+
+
+.hero-section,
+.projects-section,
+.about-section,
+.known-for-section,
+.contact-section {
+  min-height: 100vh; 
+}
+
+
+
 

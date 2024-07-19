@@ -793,7 +793,7 @@ const ProjectCard = ({ project, index }: any) => {
             className="project-image"
             priority
           />
-          <span className="project-status">{project.status}</span>
+          <span className="    project-status ">{project.status}</span>
         </div>
         <div className="project-info">
           <h3 className="project-title">{project.title}</h3>
@@ -803,6 +803,7 @@ const ProjectCard = ({ project, index }: any) => {
     </motion.div>
   );
 };
+
 export default function Content() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -856,8 +857,7 @@ export default function Content() {
 
     window.addEventListener("scroll", handleScroll);
 
-    // Simulate loading time
-    setTimeout(() => setIsLoading(false), 1500);
+    setTimeout(() => setIsLoading(false), 100);
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -878,6 +878,7 @@ export default function Content() {
     setSubject("");
     setMessage("");
   };
+  
 
   const scrollToSection = (ref: any) => {
     if (ref.current) {
@@ -908,9 +909,8 @@ export default function Content() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="loading-screen"
+        
       >
-        <div className="loader"></div>
       </motion.div>
     );
   }
@@ -920,7 +920,6 @@ export default function Content() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.2 }}
       className="bg-black text-white"
     >
       <main className="align-middle px-6 md:px-12 lg:px-24 ">
@@ -1299,7 +1298,7 @@ export default function Content() {
 
             <div className="flex space-x-4">
               <a
-                href="https://www.linkedin.com/in/rajesh-kumar-a1541b248/"
+                href="https://www.linkedin.com/in/rajesh-reddy1/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-green-400 transition-colors duration-200"
@@ -1307,7 +1306,7 @@ export default function Content() {
                 LinkedIn
               </a>
               <a
-                href="https://github.com/your-github-username"
+                href="https://github.com/Rajesh-Reddy1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-green-400 transition-colors duration-200"
@@ -1315,7 +1314,7 @@ export default function Content() {
                 GitHub
               </a>
               <a
-                href="https://www.instagram.com/your-instagram-username"
+                href="https://www.instagram.com/_rajeshreddy__/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-green-400 transition-colors duration-200"
