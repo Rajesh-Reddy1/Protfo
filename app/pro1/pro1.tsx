@@ -209,7 +209,7 @@ export default function Project1() {
         >
           <div className="container px-4 md:px-6">
             <div className="grid max-w-[1300px] mx-auto gap-4 px-4 sm:px-6 md:px-10 md:grid-cols-2 md:gap-16">
-              <div className="grid gap-6">
+              <div className=" grid gap-6">
                 {projectData.images.map((image, index) => (
                   <img
                     key={index}
@@ -217,7 +217,7 @@ export default function Project1() {
                     width="550"
                     height="310"
                     alt="Project Image"
-                    className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
+                    className="pro-Image mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
                   />
                 ))}
               </div>
@@ -323,7 +323,7 @@ export default function Project1() {
                     width="550"
                     height="310"
                     alt="Project Image"
-                    className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
+                    className="pro-Image mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
                   />
                 ))}
               </div>

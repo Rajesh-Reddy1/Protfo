@@ -210,7 +210,7 @@ export default function Project1() {
                     width="550"
                     height="310"
                     alt="Project Image"
-                    className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
+                    className="pro-Image mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
                   />
                 ))}
               </div>
@@ -226,7 +226,7 @@ export default function Project1() {
                 </p>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Link
-                    href="https://transcator.vercel.app/"
+                    href="#"
                     className="inline-flex h-9 items-center justify-center rounded-md 
              bg-primary px-4 py-2 text-sm font-medium 
              text-primary-foreground shadow transition-colors 
@@ -316,7 +316,7 @@ export default function Project1() {
                     width="550"
                     height="310"
                     alt="Project Image"
-                    className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
+                    className="pro-Image mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
                   />
                 ))}
               </div>

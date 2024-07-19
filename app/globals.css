@@ -136,6 +136,13 @@
 .logo-image:hover {
   transform: scale(1.1); 
 }
+.pro-Image{
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.pro-Image:hover {
+  transform: scale(1.1); 
+}
 
 .menu {
   @apply text-2xl font-bold cursor-pointer; 
