@@ -15,37 +15,33 @@ import "@/app/globals.css";
 export default function Project2() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const projectData = {
-    title: "Personal Finance and Productivity App",
-    description:
-      "Developed a full-stack web application for managing personal finances and productivity, featuring a responsive UI (React), backend logic (Node.js), and secure data storage (Firebase).",
-    client: "Personal Project", // Since it's a personal project
-    industries: "Finance, Productivity",
+    title: "ChatApp",
+    description: "Designed and deployed a real-time chat platform supporting over 1000 concurrent users. Implemented user authentication and data encryption to ensure secure communication. Leveraged Firebase’s real-time database for instant message delivery and synchronization.",
+    client: "Personal Project", 
+    industries: "Communication",
     services:
-      "UX Design, UI Design, Frontend Development (React), Backend Development (Node.js), Database Design (Firebase)",
-    date: "May 2024 – Present",
-    images: [img1.src],
+      "Frontend Development (React), Backend Development (Node.js), Database Design (Firebase)",
+    date: "Jan. 2024 – May. 2024",
+    images: [logo.src],
     designPrinciples: [
       {
-        title: "User-Friendly Interface",
-        description:
-          "Designed an intuitive and visually appealing interface for easy navigation and data input.",
+        title: "Real-Time Communication",
+        description: "Implemented a real-time messaging system using Firebase for instant message delivery.",
       },
       {
-        title: "Data Visualization",
-        description:
-          "Implemented charts and graphs to visually represent spending patterns and financial trends.",
+        title: "Scalability",
+        description: "Designed the chat platform to handle a large number of concurrent users with minimal latency.",
       },
       {
-        title: "Secure Data Storage",
-        description:
-          "Utilized Firebase's secure database to protect user financial information.",
+        title: "Security",
+        description: "Implemented user authentication and data encryption to protect user privacy and ensure secure communication.",
       },
     ],
-    designExplorationImages: [logo.src, msg.src],
+    designExplorationImages: [logo.src, msg.src], // Example placeholder images
     nextProject: {
-      title: "Project 2 Title",
-      description: "Project 2 Description",
-      image: logo.src,
+      title: "Tropical Storm Damage Detection Model",
+      description: "Developed a deep learning model to automatically identify and classify hurricane damage to coastal infrastructure (residential and commercial buildings) from satellite imagery.",
+      image: logo.src, // Example placeholder image
     },
   };
 

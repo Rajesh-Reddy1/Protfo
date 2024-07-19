@@ -640,13 +640,20 @@ const projects = [
   },
   {
     id: 2,
+    title: "ChatApp ",
+    description: " A real-time chat platform",
+    image: img2,
+    status: " Completed",
+  },
+  {
+    id: 3,
     title: "Tropical Storm Damage Detection Model ",
     description: " Automatically identify and classify hurricane damage",
     image: img2,
     status: " Completed",
   },
   {
-    id: 3,
+    id: 4,
     title: "Product Scrapper",
     description:
       "  Extract product data (name, website, price, link) with 95% accuracy",
@@ -654,7 +661,7 @@ const projects = [
     status: " Completed",
   },
   {
-    id: 4,
+    id: 5,
     title: "Chess Multiplayer ",
     description: "  A two-player chess game",
     image: img2,

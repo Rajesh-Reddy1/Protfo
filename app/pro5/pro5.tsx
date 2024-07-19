@@ -18,38 +18,30 @@ export default function Project5() {
     const router =useRouter();
   const [isDarkMode, setIsDarkMode] = useState(false);
   const projectData = {
-    title: "Personal Finance and Productivity App",
-    description:
-      "Developed a full-stack web application for managing personal finances and productivity, featuring a responsive UI (React), backend logic (Node.js), and secure data storage (Firebase).",
-    client: "Personal Project", // Since it's a personal project
-    industries: "Finance, Productivity",
-    services:
-      "UX Design, UI Design, Frontend Development (React), Backend Development (Node.js), Database Design (Firebase)",
-    date: "May 2024 – Present",
-    images: [img1.src],
+    title: "Chess Multiplayer",
+    description: "Developed a two-player chess game, focusing on efficient algorithms and user-friendly interface. Utilized object-oriented programming principles to create modular and reusable code components. Programmed an intuitive graphical user interface (GUI) using Pygame for seamless user interaction.",
+    client: "Personal Project", 
+    industries: "Game Development",
+    services: "Game Development (Python, Pygame)",
+    date: "Mar. 2023 – Dec. 2023",
+    images: [img1.src], // Placeholder image
     designPrinciples: [
       {
-        title: "User-Friendly Interface",
-        description:
-          "Designed an intuitive and visually appealing interface for easy navigation and data input.",
+        title: "Game Logic",
+        description: "Implemented the rules of chess with accurate game logic and move validation.",
       },
       {
-        title: "Data Visualization",
-        description:
-          "Implemented charts and graphs to visually represent spending patterns and financial trends.",
+        title: "User Interface",
+        description: "Developed a visually appealing and user-friendly interface using Pygame for seamless gameplay.",
       },
       {
-        title: "Secure Data Storage",
-        description:
-          "Utilized Firebase's secure database to protect user financial information.",
+        title: "Modular Design",
+        description: "Utilized object-oriented programming principles to create modular and reusable code components for better maintainability and scalability.",
       },
     ],
-    designExplorationImages: [logo.src, msg.src],
-    nextProject: {
-      title: "Project 2 Title",
-      description: "Project 2 Description",
-      image: logo.src,
-    },
+    designExplorationImages: [logo, msg], // Example placeholder images
+    nextProject: null, // No next project in this case
+  
   };
 
   return (
@@ -251,7 +243,7 @@ export default function Project5() {
                   className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
                   prefetch={false}
                 >
-                  <div className="text-sm font-medium leading-none group-hover:underline">
+                  {/* <div className="text-sm font-medium leading-none group-hover:underline">
                     {projectData.nextProject.title}
                   </div>
                   <div className="line-clamp-2 text-sm leading-snug text-muted-foreground">
@@ -263,7 +255,7 @@ export default function Project5() {
                     height="310"
                     alt="Next Project"
                     className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
-                  />
+                  /> */}
                 </Link>
               </div>
             </div>

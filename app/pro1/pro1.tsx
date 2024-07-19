@@ -11,14 +11,13 @@ import img1 from "@/app/component/img1.jpg";
 import msg from "@/app/component/image.png";
 import "@/app/globals.css";
 
-
 export default function Project1() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const projectData = {
     title: "Personal Finance and Productivity App",
     description:
       "Developed a full-stack web application for managing personal finances and productivity, featuring a responsive UI (React), backend logic (Node.js), and secure data storage (Firebase).",
-    client: "Personal Project", // Since it's a personal project
+    client: "Personal Project", 
     industries: "Finance, Productivity",
     services:
       "UX Design, UI Design, Frontend Development (React), Backend Development (Node.js), Database Design (Firebase)",
@@ -43,10 +42,10 @@ export default function Project1() {
     ],
     designExplorationImages: [logo.src, msg.src],
     nextProject: {
-      title: "Project 2 Title",
-      description: "Project 2 Description",
-      image: logo.src,
-    },
+        title: "ChatApp",
+        description: "Designed and deployed a real-time chat platform supporting over 1000 concurrent users. Implemented user authentication and data encryption to ensure secure communication. Leveraged Firebase’s real-time database for instant message delivery and synchronization.",
+        image: logo.src, 
+      },
   };
 
   return (
@@ -68,9 +67,6 @@ export default function Project1() {
             <MoonIcon className="size-5" />
           ) : (
             <SunIcon className="size-5" />
-            
-            
-            
           )}
           <span className="sr-only">Toggle dark mode</span>
         </button>

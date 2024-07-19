@@ -15,37 +15,32 @@ import "@/app/globals.css";
 export default function Project3() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const projectData = {
-    title: "Personal Finance and Productivity App",
-    description:
-      "Developed a full-stack web application for managing personal finances and productivity, featuring a responsive UI (React), backend logic (Node.js), and secure data storage (Firebase).",
-    client: "Personal Project", // Since it's a personal project
-    industries: "Finance, Productivity",
-    services:
-      "UX Design, UI Design, Frontend Development (React), Backend Development (Node.js), Database Design (Firebase)",
-    date: "May 2024 – Present",
-    images: [img1.src],
+    title: "Tropical Storm Damage Detection Model",
+    description: "Developed a deep learning model to automatically identify and classify hurricane damage to coastal infrastructure (residential and commercial buildings) from satellite imagery. Utilized a dataset of pre- and post-Hurricane Maria (2017) satellite images to train a YOLO object detection model for accurate damage assessment.",
+    client: "Personal Project", 
+    industries: "Environmental Science, Data Science",
+    services: "Machine Learning (Python, YOLO Algorithm, Labelme)",
+    date: "Feb. 2024 – May 2024",
+    images: [img1.src], // Placeholder image
     designPrinciples: [
       {
-        title: "User-Friendly Interface",
-        description:
-          "Designed an intuitive and visually appealing interface for easy navigation and data input.",
+        title: "Accuracy",
+        description: "Achieved high accuracy in detecting and classifying hurricane damage using a well-trained YOLO model.",
       },
       {
-        title: "Data Visualization",
-        description:
-          "Implemented charts and graphs to visually represent spending patterns and financial trends.",
+        title: "Data-Driven",
+        description: "Leveraged a comprehensive dataset of satellite images to train the model and ensure its effectiveness.",
       },
       {
-        title: "Secure Data Storage",
-        description:
-          "Utilized Firebase's secure database to protect user financial information.",
+        title: "Automation",
+        description: "Automated the damage assessment process, saving time and effort compared to manual methods.",
       },
     ],
-    designExplorationImages: [logo.src, msg.src],
+    designExplorationImages: [logo.src, msg.src], // Example placeholder images
     nextProject: {
-      title: "Project 2 Title",
-      description: "Project 2 Description",
-      image: logo.src,
+      title: "Product Scrapper",
+      description: "Developed a web scraping application to extract product data (name, website, price, link) with 95% accuracy. Built a user-friendly interface using Flask for back-end development and HTML for data presentation. Employed Pandas for efficient data analysis and comparison of extracted product information.",
+      image: logo.src, // Example placeholder image
     },
   };
 

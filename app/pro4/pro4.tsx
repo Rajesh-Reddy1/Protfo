@@ -15,37 +15,33 @@ import "@/app/globals.css";
 export default function Project4() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const projectData = {
-    title: "Personal Finance and Productivity App",
-    description:
-      "Developed a full-stack web application for managing personal finances and productivity, featuring a responsive UI (React), backend logic (Node.js), and secure data storage (Firebase).",
-    client: "Personal Project", // Since it's a personal project
-    industries: "Finance, Productivity",
+    title: "Product Scrapper",
+    description: "Developed a web scraping application to extract product data (name, website, price, link) with 95% accuracy. Built a user-friendly interface using Flask for back-end development and HTML for data presentation. Employed Pandas for efficient data analysis and comparison of extracted product information.",
+    client: "Personal Project", 
+    industries: "E-commerce, Data Scraping",
     services:
-      "UX Design, UI Design, Frontend Development (React), Backend Development (Node.js), Database Design (Firebase)",
-    date: "May 2024 – Present",
-    images: [img1.src],
+      "Backend Development (Flask), Frontend Development (HTML), Data Analysis (Pandas), Web Scraping (Selenium)",
+    date: "Nov. 2022 – Jan. 2023",
+    images: [img1.src], // Placeholder image
     designPrinciples: [
       {
+        title: "Data Extraction Accuracy",
+        description: "Achieved high accuracy in extracting product data with minimal errors.",
+      },
+      {
         title: "User-Friendly Interface",
-        description:
-          "Designed an intuitive and visually appealing interface for easy navigation and data input.",
+        description: "Built a simple and intuitive interface for users to interact with the scraper.",
       },
       {
-        title: "Data Visualization",
-        description:
-          "Implemented charts and graphs to visually represent spending patterns and financial trends.",
-      },
-      {
-        title: "Secure Data Storage",
-        description:
-          "Utilized Firebase's secure database to protect user financial information.",
+        title: "Data Analysis",
+        description: "Implemented data analysis capabilities to compare and analyze extracted product information.",
       },
     ],
-    designExplorationImages: [logo.src, msg.src],
+    designExplorationImages: [logo.src, msg.src], // Example placeholder images
     nextProject: {
-      title: "Project 2 Title",
-      description: "Project 2 Description",
-      image: logo.src,
+      title: "Chess Multiplayer",
+      description: "Developed a two-player chess game, focusing on efficient algorithms and user-friendly interface. Utilized object-oriented programming principles to create modular and reusable code components. Programmed an intuitive graphical user interface (GUI) using Pygame for seamless user interaction.",
+      image: logo.src, // Example placeholder image
     },
   };
 
