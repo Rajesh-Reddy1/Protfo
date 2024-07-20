@@ -7,7 +7,7 @@
 // import { useInView } from "react-intersection-observer";
 
 // import logo from "./logo.png";
-// import img1 from "./img1.jpg";
+// import pro1 from "./pro1.jpg";
 // import img2 from "./img2.png";
 // import msg from "./image.png";
 
@@ -16,7 +16,7 @@
 //     id: 1,
 //     title: "Personal Finance and Productivity App",
 //     description: "Record and track financial transactions and daily tasks",
-//     image: img1,
+//     image: pro1,
 //     status: " Completed",
 //   },
 //   {
@@ -625,9 +625,12 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 import logo from "./logo.png";
-import img1 from "./img1.jpg";
-import img2 from "./img2.png";
-import msg from "./image.png";
+import pro1 from "./pro1.png";
+import pro2 from "./pro2.png";
+import pro3 from "./pro3.png";
+import pro4 from "./pro4.png";
+import pro5 from "./pro5.png";
+import pic from "./pic.jpg";
 import { useRouter } from "next/navigation";
 
 const projects = [
@@ -635,21 +638,21 @@ const projects = [
     id: 1,
     title: "Personal Finance and Productivity App",
     description: "Record and track financial transactions and daily tasks",
-    image: img1,
+    image: pro1,
     status: " Completed",
   },
   {
     id: 2,
     title: "ChatApp ",
     description: " A real-time chat platform",
-    image: img2,
+    image: pro2,
     status: " Completed",
   },
   {
     id: 3,
     title: "Tropical Storm Damage Detection Model ",
     description: " Automatically identify and classify hurricane damage",
-    image: img2,
+    image: pro3,
     status: " Completed",
   },
   {
@@ -657,14 +660,14 @@ const projects = [
     title: "Product Scrapper",
     description:
       "  Extract product data (name, website, price, link) with 95% accuracy",
-    image: img2,
+    image: pro4,
     status: " Completed",
   },
   {
     id: 5,
     title: "Chess Multiplayer ",
     description: "  A two-player chess game",
-    image: img2,
+    image: pro5,
     status: " Completed",
   },
 ];
@@ -1066,13 +1069,13 @@ export default function Content() {
                   <div className="section-title text-4xl font-bold mb-6">
                     About
                   </div>
-                  <div className="h-full">
+                  <div className="mx-20">
                     <Image
-                      src={img2.src}
+                      src={pic.src}
                       alt="Rajesh"
-                      width={400}
-                      height={600}
-                      className="profile-image w-auto h-full"
+                      width={200}
+                      height={400}
+                      className="profile-image w-auto h-auto"
                     />
                   </div>
                 </motion.div>
@@ -1153,131 +1156,7 @@ export default function Content() {
             </div>
           </motion.section>
 
-          <motion.section
-            className="about-section bg-black text-white py-10 px-6 md:px-12 lg:px-24 relative"
-            ref={contactRef}
-            id="contact-section"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false }}
-            variants={fadeInUp}
-          >
-            <div className="line absolute top-0 left-0 right-0 mx-auto w-5/7 h-px bg-gray-100"></div>
-            <motion.div
-              className="section-title text-4xl font-bold text-center"
-              variants={fadeInUp}
-            >
-              Contact Us
-            </motion.div>
-            <motion.div
-              className="section-title text-3xl font-bold text-center"
-              variants={fadeInUp}
-            >
-              Reach out for a new project or just say hello
-            </motion.div>
-            <div className="container mx-auto">
-              <div className="container-contact1">
-                <motion.div
-                  className="contact1-pic js-tilt"
-                  data-tilt=""
-                  variants={fadeInUp}
-                >
-                  <Image
-                    src={msg}
-                    alt="IMG"
-                    width={500}
-                    height={400}
-                    priority
-                  />
-                </motion.div>
-                <motion.form
-                  className="contact1-form validate-form"
-                  onSubmit={handleSubmit}
-                  variants={staggerChildren}
-                >
-                  <motion.span
-                    className="contact1-form-title"
-                    variants={fadeInUp}
-                  >
-                    Get in touch
-                  </motion.span>
-                  <motion.div
-                    className="wrap-input1 validate-input"
-                    data-validate="Name is required"
-                    variants={fadeInUp}
-                  >
-                    <input
-                      className="input1"
-                      type="text"
-                      name="name"
-                      placeholder="Name"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                    />
-                    <span className="shadow-input1"></span>
-                  </motion.div>
-                  <motion.div
-                    className="wrap-input1 validate-input"
-                    data-validate="Valid email is required: ex@abc.xyz"
-                    variants={fadeInUp}
-                  >
-                    <input
-                      className="input1"
-                      type="text"
-                      name="email"
-                      placeholder="Email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                    />
-                    <span className="shadow-input1"></span>
-                  </motion.div>
-                  <motion.div
-                    className="wrap-input1 validate-input"
-                    data-validate="Subject is required"
-                    variants={fadeInUp}
-                  >
-                    <input
-                      className="input1"
-                      type="text"
-                      name="subject"
-                      placeholder="Subject"
-                      value={subject}
-                      onChange={(e) => setSubject(e.target.value)}
-                    />
-                    <span className="shadow-input1"></span>
-                  </motion.div>
-                  <motion.div
-                    className="wrap-input1 validate-input"
-                    data-validate="Message is required"
-                    variants={fadeInUp}
-                  >
-                    <textarea
-                      className="input1"
-                      name="message"
-                      placeholder="Message"
-                      value={message}
-                      onChange={(e) => setMessage(e.target.value)}
-                    ></textarea>
-                    <span className="shadow-input1"></span>
-                  </motion.div>
-                  <motion.div
-                    className="container-contact1-form-btn"
-                    variants={fadeInUp}
-                  >
-                    <button className="contact1-form-btn" type="submit">
-                      <span>
-                        Send Email
-                        <i
-                          className="fa fa-long-arrow-right"
-                          aria-hidden="true"
-                        ></i>
-                      </span>
-                    </button>
-                  </motion.div>
-                </motion.form>
-              </div>
-            </div>
-          </motion.section>
+          
         </div>
         <footer className="bg-black py-10 mt-16 relative">
           <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-4 ">

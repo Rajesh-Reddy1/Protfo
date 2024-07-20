@@ -51,6 +51,24 @@ function EmailButton() {
 
 export default function Project1() {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(true);
+      }
+    };
+    setTimeout(() => {
+      setShowMenu(true);
+    }, 100);
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   const projectData = {
     title: "ChatApp",
     description: "Designed and deployed a real-time chat platform supporting over 1000 concurrent users. Implemented user authentication and data encryption to ensure secure communication. Leveraged Firebase’s real-time database for instant message delivery and synchronization.",
@@ -172,7 +190,11 @@ export default function Project1() {
 
   return (
     <div className={`flex flex-col min-h-screen ${isDarkMode ? "" : "dark"}`}>
-      <header className="px-4 lg:px-6 h-14 flex items-center justify-between bg-background text-foreground">
+      <header className={` p-6 px-4 lg:px-6 h-14 flex items-center justify-between bg-background text-foreground ${
+              isSticky && showMenu
+                ? "sticky top-0 z-10 bg-opacity-80 backdrop-blur-sm"
+                : ""
+            }`}>
         <Link
           href="/"
           className="flex items-center justify-center"
@@ -241,7 +263,7 @@ export default function Project1() {
                   </Link>
                   <Link
                     href="https://drive.google.com/file/d/11paswckZoNXOt3oBO5INXh51QyGhJRZS/view?usp=sharing"
-                    className="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                    className="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-slate-500  hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
                     prefetch={false}
                   >
                     Download CV
@@ -363,7 +385,7 @@ export default function Project1() {
                   <EmailButton></EmailButton>
                   <Link
                     href="https://www.linkedin.com/in/rajesh-reddy1/"
-                    className="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                    className="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-slate-500  hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
                     prefetch={false}
                   >
                     LinkedIn
@@ -376,7 +398,7 @@ export default function Project1() {
                 </h3>
                 <Link
                   href="./pro3"
-                  className=" group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                  className=" group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-slate-600 hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
                   prefetch={false}
                 >
                   <div className=" text-sm font-medium leading-none group-hover:underline">
