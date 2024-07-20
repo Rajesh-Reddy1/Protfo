@@ -456,7 +456,7 @@ footer {
   transform: scale(1.1);
 }
 .profile-image{
-  width: 1000%;
+  width: 100%;
   height: 500px; 
   border-radius: 10px;
   object-fit: cover;

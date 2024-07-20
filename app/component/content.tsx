@@ -945,7 +945,7 @@ export default function Content() {
             </Link>
             <nav className="flex items-center space-x-4">
               <ul className="flex space-x-4">
-                {["Home", "Projects", "About", "Knows", "Contact"].map(
+                {["Home", "Projects", "About", "Knows", ].map(
                   (item) => (
                     <li key={item} className="menu-item">
                       <Link
@@ -1069,13 +1069,13 @@ export default function Content() {
                   <div className="section-title text-4xl font-bold mb-6">
                     About
                   </div>
-                  <div className="mx-20">
+                  <div className="mx-10">
                     <Image
                       src={pic.src}
                       alt="Rajesh"
                       width={200}
                       height={400}
-                      className="profile-image w-auto h-auto"
+                      className="profile-image w-full h-auto"
                     />
                   </div>
                 </motion.div>
