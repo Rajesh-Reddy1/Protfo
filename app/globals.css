@@ -126,6 +126,12 @@
   line-height: 1.4;
 }
 
+.log-image {
+  width: 200px;
+  height: auto;
+  @apply text-2xl font-bold cursor-pointer; 
+  transition: transform 1.5s ease-out;
+}
 .logo-image {
   width: 50px;
   height: auto;
@@ -520,3 +526,19 @@ footer {
 
 
 
+/* Inside your global CSS file */
+.hover-word-scale {
+  @apply scale-110;
+}
+
+.hover-word-color {
+  @apply text-blue-900; 
+}
+
+a .hover-word-scale {
+  @apply scale-110; /* Add any other hover styles */
+}
+
+a .hover-word-color {
+  @apply text-blue-900; /* Add any other hover styles */
+}
