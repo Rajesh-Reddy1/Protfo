@@ -15,16 +15,9 @@ I'm Rajesh, a passionate multi-disciplinary designer with [number] years of expe
 - **Workshop Facilitation**
 - **Certified SCRUM Master**
 
-**[Link to your LinkedIn or personal website]**
+**https://www.linkedin.com/in/rajesh-reddy1/**
 
-## Featured Projects
 
-This portfolio highlights some of my recent projects:
-
-- **Android Private Space:**  [Project description - Briefly explain the problem you solved and the outcome]
-- **Platform McKinsey:** [Project description - Briefly explain the problem you solved and the outcome]
-
-**[Link to a project page or case study]**
 
 ## Technologies
 
@@ -36,7 +29,7 @@ This portfolio was built using:
 
 ## Getting Started
 
-You can view my portfolio live at: **[Link to your deployed portfolio]**
+You can view my portfolio live at: **https://protfolio-max.vercel.app/**
 
 To explore the code, you can:
 
