@@ -757,9 +757,7 @@ function HoverWord({ children, className }: any) {
 
   return (
     <span
-      className={`inline-block transition-transform duration-200 ${
-        isHovered ? "hover-word-scale hover-word-color" : ""
-      } ${className}`}
+    className={`inline-block transition-transform duration-200 ${className} hover-word`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -985,7 +983,7 @@ export default function Content() {
                 >
                   <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6">
                     <HoverWord>{"I'm"}</HoverWord>{" "}
-                    <HoverWord className="text-green-500 hover:text-blue-900">
+                    <HoverWord className="text-green-500">
                       Rajesh
                     </HoverWord>
                     , <HoverWord>a</HoverWord>{" "}
@@ -999,12 +997,12 @@ export default function Content() {
                     <HoverWord>everything.</HoverWord>
                     <br />
                     <HoverWord>Currently</HoverWord> <HoverWord>at</HoverWord>{" "}
-                    <HoverWord className="text-green-500 hover:text-blue-900">
+                    <HoverWord className="text-green-500">
                       ReactJs
                     </HoverWord>
                     , <HoverWord>previously</HoverWord>{" "}
                     <HoverWord>at</HoverWord>{" "}
-                    <HoverWord className="text-green-500 hover:text-blue-900">
+                    <HoverWord className="text-green-500">
                       Python
                     </HoverWord>
                     .
