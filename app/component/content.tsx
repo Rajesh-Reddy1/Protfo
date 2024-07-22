@@ -611,19 +611,14 @@
 //   );
 // }
 
-
-
-
 "use client";
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useAnimation,  AnimatePresence } from "framer-motion";
+import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { cardio } from 'ldrs'
-
-
+import { cardio } from "ldrs";
 
 import pro1 from "./pro1.png";
 import pro2 from "./pro2.png";
@@ -632,7 +627,6 @@ import pro4 from "./pro4.png";
 import pro5 from "./pro5.png";
 import pic from "./pic.jpg";
 import { useRouter } from "next/navigation";
-
 
 const projects = [
   {
@@ -731,7 +725,7 @@ const knownForItems = [
 ];
 
 const LoadingAnimation = ({ isLoading }: { isLoading: boolean }) => {
-  if (typeof window !== 'undefined') { 
+  if (typeof window !== "undefined") {
     cardio.register();
   }
   return (
@@ -757,7 +751,7 @@ function HoverWord({ children, className }: any) {
 
   return (
     <span
-    className={`inline-block transition-transform duration-200 ${className} hover-word`}
+      className={`inline-block transition-transform duration-200 ${className} hover-word`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -847,7 +841,6 @@ export default function Content() {
   });
 
   const [showContent, setShowContent] = useState(false);
-  
 
   const imageVariants = {
     hidden: { opacity: 0, x: -100 },
@@ -916,306 +909,294 @@ export default function Content() {
     }
   };
 
-
-
   return (
     <div className="bg-black min-h-screen">
-        <LoadingAnimation isLoading={isLoading} />
+      <LoadingAnimation isLoading={isLoading} />
 
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className=" text-white"
-        >
-          <main className={`align-middle px-6 md:px-12 lg:px-24
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className=" text-white"
+      >
+        <main
+          className={`align-middle px-6 md:px-12 lg:px-24
                        ${isLoading ? "opacity-0" : "opacity-100"} 
-                       transition-opacity duration-500`}>
-            <div className="bg-black text-white min-h-screen">
-              <header
-                className={`flex items-center justify-between p-6 ${
-                  isSticky && showMenu
-                    ? "sticky top-0 z-10 bg-opacity-90 backdrop-blur-sm"
-                    : ""
-                }`}
-              >
-                <Link href="/">
-                  <l-cardio
-                    size="40"
-                    stroke="6"
-                    speed="2"
-                    color="white"
-                  ></l-cardio>
-                </Link>
-                <nav className="flex items-center space-x-4">
-                  <ul className="flex space-x-4">
-                    {["Home", "Projects", "About", "Knows"].map((item) => (
-                      <li key={item} className="menu-item">
-                        <Link
-                          href={`#${item.toLowerCase()}-section`}
-                          className={`text-white ${
-                            activeMenu === item ? "active" : ""
-                          }`}
-                          onClick={() => {
-                            setActiveMenu(item);
-                            scrollToSection(eval(`${item.toLowerCase()}Ref`));
-                          }}
-                        >
-                          {item}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </nav>
-              </header>
-
-              <section
-                className="hero-section bg-black text-white flex flex-col justify-center items-center h-screen px-8 lg:px-16"
-                id="home-section"
-                ref={homeRef}
-              >
-                <motion.div
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1 }}
-                  className="header-content text-center"
-                >
-                  <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6">
-                    <HoverWord>{"I'm"}</HoverWord>{" "}
-                    <HoverWord className="text-green-500">
-                      Rajesh
-                    </HoverWord>
-                    , <HoverWord>a</HoverWord>{" "}
-                    <HoverWord>multi-disciplinary</HoverWord>{" "}
-                    <HoverWord>designer</HoverWord>
-                    ,
-                    <br />
-                    <HoverWord>fueled</HoverWord> <HoverWord>by</HoverWord>{" "}
-                    <HoverWord>coffee</HoverWord> <HoverWord>and</HoverWord>{" "}
-                    <HoverWord>curious</HoverWord> <HoverWord>about</HoverWord>{" "}
-                    <HoverWord>everything.</HoverWord>
-                    <br />
-                    <HoverWord>Currently</HoverWord> <HoverWord>at</HoverWord>{" "}
-                    <HoverWord className="text-green-500">
-                      ReactJs
-                    </HoverWord>
-                    , <HoverWord>previously</HoverWord>{" "}
-                    <HoverWord>at</HoverWord>{" "}
-                    <HoverWord className="text-green-500">
-                      Python
-                    </HoverWord>
-                    .
-                  </h1>
-                  <div className="flex justify-center items-center text-sm text-gray-400 py-4 space-x-4">
-                    <span>
-                      Hyderabad, India <hr />
-                    </span>
-                    <Link
-                      href="#projects-section"
-                      className={`menu-item text-white ${
-                        activeMenu === "Projects" ? "active" : ""
-                      }`}
-                      onClick={() => {
-                        scrollToSection(projectsRef);
-                      }}
-                    >
-                      See Worked Projects
-                    </Link>
-                  </div>
-                </motion.div>
-              </section>
-
-              <section
-                className="projects-section relative"
-                ref={projectsRef}
-                id="projects-section"
-              >
-                <div className="line absolute top-0 left-0 right-0 mx-auto w-5/7 h-px bg-gray-100"></div>
-
-                <div className="container">
-                  <div className="parent-container">
-                    <div className="header-container">
-                      <div className="section-title text-4xl font-bold">
-                        Selected works
-                      </div>
-                      <div className="section-title text-2xl font-thin">
-                        {"21'-24'"}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="projects-grid">
-                    {projects.map((project, index) => (
-                      <ProjectCard
-                        key={project.id}
-                        project={project}
-                        index={index}
-                      />
-                    ))}
-                  </div>
-                </div>
-              </section>
-
-              <motion.section
-                className="about-section bg-black text-white py-10 px-6 md:px-12 lg:px-24 relative min-h-screen"
-                id="about-section"
-                ref={aboutRef}
-                initial="hidden"
-                animate={aboutInView ? "visible" : "hidden"}
-              >
-                <div className="line absolute top-0 left-0 right-0 mx-auto w-5/7 h-px bg-gray-100"></div>
-                <div className="container mx-auto">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                    <motion.div
-                      className="about-text text-left"
-                      variants={imageVariants}
-                    >
-                      <div className="section-title text-4xl font-bold mb-6">
-                        About
-                      </div>
-                      <div className="mx-10">
-                        <Image
-                          src={pic.src}
-                          alt="Rajesh"
-                          width={200}
-                          height={400}
-                          className="profile-image w-full h-auto"
-                        />
-                      </div>
-                    </motion.div>
-
-                    <motion.div className="experience" variants={textVariants}>
-                      {aboutContent.map((item) => (
-                        <motion.p
-                          key={item.id}
-                          className="text-lg mb-6"
-                          variants={textVariants}
-                        >
-                          {item.text}
-                        </motion.p>
-                      ))}
-                      {experience.map((item) => (
-                        <motion.div
-                          key={item.id}
-                          className="experience-item mb-6"
-                          variants={textVariants}
-                        >
-                          <div
-                            className="flex items-center justify-between cursor-pointer"
-                            onClick={() => toggleItem(item.id)}
-                          >
-                            <h3 className="text-xl font-bold">
-                              {item.company}
-                            </h3>
-                            <span className="text-2xl transition-transform duration-300 transform">
-                              {expandedItems.includes(item.id) ? "-" : "+"}{" "}
-                            </span>
-                          </div>
-                          {expandedItems.includes(item.id) && (
-                            <motion.p
-                              className="text-gray-400 mt-2"
-                              initial={{ opacity: 0, height: 0 }}
-                              animate={{ opacity: 1, height: "auto" }}
-                              exit={{ opacity: 0, height: 0 }}
-                              transition={{ duration: 0.3 }}
-                            >
-                              {item.role}
-                            </motion.p>
-                          )}
-                        </motion.div>
-                      ))}
-                    </motion.div>
-                  </div>
-                </div>
-              </motion.section>
-              <motion.section
-                className="about-section bg-black text-white py-8 px-6 md:px-12 lg:px-24 relative min-h-screen"
-                ref={knowsRef}
-                id="knows-section"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: false }}
-                variants={fadeInUp}
-              >
-                <div className="line absolute top-0 left-0 right-0 mx-auto w-5/7 h-px bg-gray-100"></div>
-                <div className="container mx-auto">
-                  <motion.h3
-                    className="known-for-title text-2xl text-gray-400 mb-6"
-                    variants={fadeInUp}
-                  >
-                    What {"I'm"} known for
-                  </motion.h3>
-                  <motion.ul
-                    className="about-text text-right"
-                    variants={staggerChildren}
-                  >
-                    {knownForItems.map((item, index) => (
-                      <motion.li
-                        key={index}
-                        className="known-for-item"
-                        variants={fadeInUp}
+                       transition-opacity duration-500`}
+        >
+          <div className="bg-black text-white min-h-screen">
+            <header
+              className={`flex items-center justify-between p-6 ${
+                isSticky && showMenu
+                  ? "sticky top-0 z-10 bg-opacity-90 backdrop-blur-sm"
+                  : ""
+              }`}
+            >
+              <Link href="/">
+                <l-cardio
+                  size="40"
+                  stroke="6"
+                  speed="2"
+                  color="white"
+                ></l-cardio>
+              </Link>
+              <nav className="flex items-center space-x-4">
+                <ul className="flex space-x-4">
+                  {["Home", "Projects", "About", "Knows"].map((item) => (
+                    <li key={item} className="menu-item">
+                      <Link
+                        href={`#${item.toLowerCase()}-section`}
+                        className={`text-white ${
+                          activeMenu === item ? "active" : ""
+                        }`}
+                        onClick={() => {
+                          setActiveMenu(item);
+                          scrollToSection(eval(`${item.toLowerCase()}Ref`));
+                        }}
                       >
                         {item}
-                      </motion.li>
-                    ))}
-                  </motion.ul>
-                </div>
-              </motion.section>
-            </div>
-            <footer className="bg-black py-10 mt-16 relative">
-              <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-4 ">
-                <div className="mb-6 md:mb-0 flex flex-col items-center">
-                  {" "}
-                  {/* Add flex items-center */}
-                  <Link href="/">
-                    <div className="logo-image  w-24">
-                      {" "}
-                      {/* Add a width for the logo */}
-                      <l-cardio
-                        size="40"
-                        stroke="6"
-                        speed="2"
-                        color="white"
-                      ></l-cardio>
-                    </div>
-                  </Link>
-                  <p className="text-gray-400 mt-2">
-                    © 2023 Rajesh. All rights reserved.
-                  </p>
-                </div>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            </header>
 
-                <div className="flex space-x-4">
-                  <a
-                    href="https://www.linkedin.com/in/rajesh-reddy1/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-green-400 transition-colors duration-200"
+            <section
+              className="hero-section bg-black text-white flex flex-col justify-center items-center h-screen px-8 lg:px-16"
+              id="home-section"
+              ref={homeRef}
+            >
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                className="header-content text-center"
+              >
+                <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6">
+                  <HoverWord>{"I'm"}</HoverWord>{" "}
+                  <HoverWord className="text-green-500">Rajesh</HoverWord>,{" "}
+                  <HoverWord>a</HoverWord>{" "}
+                  <HoverWord>multi-disciplinary</HoverWord>{" "}
+                  <HoverWord>designer</HoverWord>
+                  ,
+                  <br />
+                  <HoverWord>fueled</HoverWord> <HoverWord>by</HoverWord>{" "}
+                  <HoverWord>coffee</HoverWord> <HoverWord>and</HoverWord>{" "}
+                  <HoverWord>curious</HoverWord> <HoverWord>about</HoverWord>{" "}
+                  <HoverWord>everything.</HoverWord>
+                  <br />
+                  <HoverWord>Currently</HoverWord> <HoverWord>at</HoverWord>{" "}
+                  <HoverWord className="text-green-500">ReactJs</HoverWord>,{" "}
+                  <HoverWord>previously</HoverWord> <HoverWord>at</HoverWord>{" "}
+                  <HoverWord className="text-green-500">Python</HoverWord>.
+                </h1>
+                <div className="flex justify-center items-center text-sm text-gray-400 py-4 space-x-4">
+                  <span>
+                    Hyderabad, India <hr />
+                  </span>
+                  <Link
+                    href="#projects-section"
+                    className={`menu-item text-white ${
+                      activeMenu === "Projects" ? "active" : ""
+                    }`}
+                    onClick={() => {
+                      scrollToSection(projectsRef);
+                    }}
                   >
-                    LinkedIn
-                  </a>
-                  <a
-                    href="https://github.com/Rajesh-Reddy1"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-green-400 transition-colors duration-200"
-                  >
-                    GitHub
-                  </a>
-                  <a
-                    href="https://www.instagram.com/_rajeshreddy__/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-green-400 transition-colors duration-200"
-                  >
-                    Instagram
-                  </a>
+                    See Worked Projects
+                  </Link>
+                </div>
+              </motion.div>
+            </section>
+
+            <section
+              className="projects-section relative"
+              ref={projectsRef}
+              id="projects-section"
+            >
+              <div className="line absolute top-0 left-0 right-0 mx-auto w-5/7 h-px bg-gray-100"></div>
+
+              <div className="container">
+                <div className="parent-container">
+                  <div className="header-container">
+                    <div className="section-title text-4xl font-bold">
+                      Selected works
+                    </div>
+                    <div className="section-title text-2xl font-thin">
+                      {"21'-24'"}
+                    </div>
+                  </div>
+                </div>
+                <div className="projects-grid">
+                  {projects.map((project, index) => (
+                    <ProjectCard
+                      key={project.id}
+                      project={project}
+                      index={index}
+                    />
+                  ))}
                 </div>
               </div>
-              <div className="  line absolute top-0 left-0 right-0 mx-auto w-5/7 h-px bg-gray-100"></div>
-            </footer>
-          </main>
-        </motion.div>
-        
+            </section>
+
+            <motion.section
+              className="about-section bg-black text-white py-10 px-6 md:px-12 lg:px-24 relative min-h-screen"
+              id="about-section"
+              ref={aboutRef}
+              initial="hidden"
+              animate={aboutInView ? "visible" : "hidden"}
+            >
+              <div className="line absolute top-0 left-0 right-0 mx-auto w-5/7 h-px bg-gray-100"></div>
+              <div className="container mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                  <motion.div
+                    className="about-text text-left"
+                    variants={imageVariants}
+                  >
+                    <div className="section-title text-4xl font-bold mb-6">
+                      About
+                    </div>
+                    <div className="w-full md:w-auto">
+                      <Image
+                        src={pic.src}
+                        alt="Rajesh"
+                        width={200}
+                        height={400}
+                        className="profile-image w-full h-auto rounded-md sm:w-full sm:mx-0 sm-h-auto" // Apply on small screens
+                      />
+                    </div>
+                  </motion.div>
+
+                  <motion.div className="experience" variants={textVariants}>
+                    {aboutContent.map((item) => (
+                      <motion.p
+                        key={item.id}
+                        className="text-lg mb-6"
+                        variants={textVariants}
+                      >
+                        {item.text}
+                      </motion.p>
+                    ))}
+                    {experience.map((item) => (
+                      <motion.div
+                        key={item.id}
+                        className="experience-item mb-6"
+                        variants={textVariants}
+                      >
+                        <div
+                          className="flex items-center justify-between cursor-pointer"
+                          onClick={() => toggleItem(item.id)}
+                        >
+                          <h3 className="text-xl font-bold">{item.company}</h3>
+                          <span className="text-2xl transition-transform duration-300 transform">
+                            {expandedItems.includes(item.id) ? "-" : "+"}{" "}
+                          </span>
+                        </div>
+                        {expandedItems.includes(item.id) && (
+                          <motion.p
+                            className="text-gray-400 mt-2"
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.3 }}
+                          >
+                            {item.role}
+                          </motion.p>
+                        )}
+                      </motion.div>
+                    ))}
+                  </motion.div>
+                </div>
+              </div>
+            </motion.section>
+            <motion.section
+              className="about-section bg-black text-white py-8 px-6 md:px-12 lg:px-24 relative min-h-screen"
+              ref={knowsRef}
+              id="knows-section"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false }}
+              variants={fadeInUp}
+            >
+              <div className="line absolute top-0 left-0 right-0 mx-auto w-5/7 h-px bg-gray-100"></div>
+              <div className="container mx-auto">
+                <motion.h3
+                  className="known-for-title text-2xl text-gray-400 mb-6"
+                  variants={fadeInUp}
+                >
+                  What {"I'm"} known for
+                </motion.h3>
+                <motion.ul
+                  className="about-text text-right"
+                  variants={staggerChildren}
+                >
+                  {knownForItems.map((item, index) => (
+                    <motion.li
+                      key={index}
+                      className="known-for-item"
+                      variants={fadeInUp}
+                    >
+                      {item}
+                    </motion.li>
+                  ))}
+                </motion.ul>
+              </div>
+            </motion.section>
+          </div>
+          <footer className="bg-black py-10 mt-16 relative">
+            <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-4 ">
+              <div className="mb-6 md:mb-0 flex flex-col items-center">
+                {" "}
+                {/* Add flex items-center */}
+                <Link href="/">
+                  <div className="logo-image  w-24">
+                    {" "}
+                    {/* Add a width for the logo */}
+                    <l-cardio
+                      size="40"
+                      stroke="6"
+                      speed="2"
+                      color="white"
+                    ></l-cardio>
+                  </div>
+                </Link>
+                <p className="text-gray-400 mt-2">
+                  © 2023 Rajesh. All rights reserved.
+                </p>
+              </div>
+
+              <div className="flex space-x-4">
+                <a
+                  href="https://www.linkedin.com/in/rajesh-reddy1/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-green-400 transition-colors duration-200"
+                >
+                  LinkedIn
+                </a>
+                <a
+                  href="https://github.com/Rajesh-Reddy1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-green-400 transition-colors duration-200"
+                >
+                  GitHub
+                </a>
+                <a
+                  href="https://www.instagram.com/_rajeshreddy__/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-green-400 transition-colors duration-200"
+                >
+                  Instagram
+                </a>
+              </div>
+            </div>
+            <div className="  line absolute top-0 left-0 right-0 mx-auto w-5/7 h-px bg-gray-100"></div>
+          </footer>
+        </main>
+      </motion.div>
     </div>
   );
 }
