@@ -614,7 +614,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -627,6 +626,12 @@ import pro4 from "./pro4.png";
 import pro5 from "./pro5.png";
 import pic from "./pic.jpg";
 import { useRouter } from "next/navigation";
+import React from "react";
+import Image from "next/image"; 
+import { DockDemo } from "@/components/magicui/dock";
+
+
+
 
 const projects = [
   {
@@ -820,6 +825,7 @@ const ProjectCard = ({ project, index }: any) => {
         </div>
       </div>
     </motion.div>
+    
   );
 };
 
@@ -839,7 +845,7 @@ export default function Content() {
     triggerOnce: false,
     threshold: 0.2,
   });
-
+  const contactRef = useRef(null);
   const [showContent, setShowContent] = useState(false);
 
   const imageVariants = {
@@ -942,22 +948,24 @@ export default function Content() {
               </Link>
               <nav className="flex items-center space-x-4">
                 <ul className="flex space-x-4">
-                  {["Home", "Projects", "About", "Knows"].map((item) => (
-                    <li key={item} className="menu-item">
-                      <Link
-                        href={`#${item.toLowerCase()}-section`}
-                        className={`text-white ${
-                          activeMenu === item ? "active" : ""
-                        }`}
-                        onClick={() => {
-                          setActiveMenu(item);
-                          scrollToSection(eval(`${item.toLowerCase()}Ref`));
-                        }}
-                      >
-                        {item}
-                      </Link>
-                    </li>
-                  ))}
+                  {["Home", "Projects", "About", "Knows", ].map(
+                    (item) => (
+                      <li key={item} className="menu-item">
+                        <Link
+                          href={`#${item.toLowerCase()}-section`}
+                          className={`text-white ${
+                            activeMenu === item ? "active" : ""
+                          }`}
+                          onClick={() => {
+                            setActiveMenu(item);
+                            scrollToSection(eval(`${item.toLowerCase()}Ref`));
+                          }}
+                        >
+                          {item}
+                        </Link>
+                      </li>
+                    )
+                  )}
                 </ul>
               </nav>
             </header>
@@ -973,6 +981,7 @@ export default function Content() {
                 transition={{ duration: 1 }}
                 className="header-content text-center"
               >
+                
                 <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6">
                   <HoverWord>{"I'm"}</HoverWord>{" "}
                   <HoverWord className="text-green-500">Rajesh</HoverWord>,{" "}
@@ -1111,7 +1120,7 @@ export default function Content() {
               </div>
             </motion.section>
             <motion.section
-              className="about-section bg-black text-white py-8 px-6 md:px-12 lg:px-24 relative min-h-screen"
+              className=" bg-black text-white py-8 px-6 md:px-12 lg:px-24 relative "
               ref={knowsRef}
               id="knows-section"
               initial="hidden"
@@ -1142,10 +1151,36 @@ export default function Content() {
                   ))}
                 </motion.ul>
               </div>
+               
             </motion.section>
+            
+            {/* <motion.section
+              className="about-section bg-black text-white py-8 px-6 md:px-12 lg:px-24 relative min-h-screen"
+              ref={contactRef}
+              id="knows-section"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false }}
+              variants={fadeInUp}
+            >
+              <div className="line absolute top-0 left-0 right-0 mx-auto w-5/7 h-px bg-gray-100"></div>
+              <div className="container mx-auto">
+                <div className="section-title text-4xl font-bold mb-6">
+                  Contact
+                </div>
+              </div>
+            </motion.section> */}
           </div>
+          <motion.section
+              className=" bg-black text-white py-8 px-6 md:px-12 lg:px-24 "
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false }}
+              variants={fadeInUp}
+            >
+              <DockDemo/>
           <footer className="bg-black py-10 mt-16 relative">
-            <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-4 ">
+            <div className="mx-auto flex flex-col md:flex-row justify-evenly items-center px-4 ">
               <div className="mb-6 md:mb-0 flex flex-col items-center">
                 {" "}
                 {/* Add flex items-center */}
@@ -1195,6 +1230,7 @@ export default function Content() {
             </div>
             <div className="  line absolute top-0 left-0 right-0 mx-auto w-5/7 h-px bg-gray-100"></div>
           </footer>
+        </motion.section>
         </main>
       </motion.div>
     </div>
