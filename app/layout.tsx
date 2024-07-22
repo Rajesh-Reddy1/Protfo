@@ -18,6 +18,7 @@ const fontBody = Inter({
 export default function Layout({ children}:any) {
   return (
     <html lang="en">
+      <title>Protfolio</title>
       <body 
         className={cn(
           'antialiased',
@@ -25,6 +26,7 @@ export default function Layout({ children}:any) {
           fontBody.variable
         )}
       >
+
         <SpeedInsights/>
         {children}
       </body>
