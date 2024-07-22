@@ -25,7 +25,7 @@ This portfolio was built using:
 
 - **Next.js:**  A React framework for building fast and scalable web applications.
 - **Tailwind CSS:** A utility-first CSS framework for rapid and efficient styling.
-- **[Other technologies you used]**
+
 
 ## Getting Started
 
