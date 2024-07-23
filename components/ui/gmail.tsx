@@ -12,7 +12,7 @@ export default function Gmail() {
     <div className="container mx-auto px-4 py-16 text-center">
 
       <p className="text-lg mb-4">
-        If you'd like to get in touch, you can reach me at: 
+        {"If you'd like to get in touch, you can reach me at: "}
       </p>
 
 
