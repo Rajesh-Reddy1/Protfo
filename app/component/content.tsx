@@ -627,11 +627,10 @@ import pro5 from "./pro5.png";
 import pic from "./pic.jpg";
 import { useRouter } from "next/navigation";
 import React from "react";
-import Image from "next/image"; 
+import Image from "next/image";
 import { DockDemo } from "@/components/magicui/dock";
-
-
-
+import { Badge } from "@/components/ui/badge";
+import Gmail from "@/components/ui/gmail";
 
 const projects = [
   {
@@ -817,7 +816,7 @@ const ProjectCard = ({ project, index }: any) => {
             className="project-image"
             priority
           />
-          <span className="    project-status ">{project.status}</span>
+          <Badge className="project-status ">{project.status}</Badge>
         </div>
         <div className="project-info">
           <h3 className="project-title">{project.title}</h3>
@@ -825,7 +824,6 @@ const ProjectCard = ({ project, index }: any) => {
         </div>
       </div>
     </motion.div>
-    
   );
 };
 
@@ -927,8 +925,8 @@ export default function Content() {
       >
         <main
           className={`align-middle px-6 md:px-12 lg:px-24
-                       ${isLoading ? "opacity-0" : "opacity-100"} 
-                       transition-opacity duration-500`}
+                      ${isLoading ? "opacity-0" : "opacity-100"} 
+                      transition-opacity duration-500`}
         >
           <div className="bg-black text-white min-h-screen">
             <header
@@ -948,40 +946,40 @@ export default function Content() {
               </Link>
               <nav className="flex items-center space-x-4">
                 <ul className="flex space-x-4">
-                  {["Home", "Projects", "About", "Knows", ].map(
-                    (item) => (
-                      <li key={item} className="menu-item">
-                        <Link
-                          href={`#${item.toLowerCase()}-section`}
-                          className={`text-white ${
-                            activeMenu === item ? "active" : ""
-                          }`}
-                          onClick={() => {
-                            setActiveMenu(item);
-                            scrollToSection(eval(`${item.toLowerCase()}Ref`));
-                          }}
-                        >
-                          {item}
-                        </Link>
-                      </li>
-                    )
-                  )}
+                  {["Home", "Projects", "About", "Knows"].map((item) => (
+                    <li key={item} className="menu-item">
+                      <Link
+                        href={`#${item.toLowerCase()}-section`}
+                        className={`text-white ${
+                          activeMenu === item ? "active" : ""
+                        }`}
+                        onClick={() => {
+                          setActiveMenu(item);
+                          scrollToSection(eval(`${item.toLowerCase()}Ref`));
+                        }}
+                      >
+                        {item}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </nav>
             </header>
 
-            <section
+            <motion.section
               className="hero-section bg-black text-white flex flex-col justify-center items-center h-screen px-8 lg:px-16"
               id="home-section"
               ref={homeRef}
+              initial="hidden"
+              animate={aboutInView ? "visible" : "hidden"}
             >
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
                 className="header-content text-center"
-              >
                 
+              >
                 <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6">
                   <HoverWord>{"I'm"}</HoverWord>{" "}
                   <HoverWord className="text-green-500">Rajesh</HoverWord>,{" "}
@@ -1017,7 +1015,7 @@ export default function Content() {
                   </Link>
                 </div>
               </motion.div>
-            </section>
+            </motion.section>
 
             <section
               className="projects-section relative"
@@ -1151,9 +1149,8 @@ export default function Content() {
                   ))}
                 </motion.ul>
               </div>
-               
             </motion.section>
-            
+
             {/* <motion.section
               className="about-section bg-black text-white py-8 px-6 md:px-12 lg:px-24 relative min-h-screen"
               ref={contactRef}
@@ -1172,65 +1169,66 @@ export default function Content() {
             </motion.section> */}
           </div>
           <motion.section
-              className=" bg-black text-white py-8 px-6 md:px-12 lg:px-24 "
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: false }}
-              variants={fadeInUp}
-            >
-              <DockDemo/>
-          <footer className="bg-black py-10 mt-16 relative">
-            <div className="mx-auto flex flex-col md:flex-row justify-evenly items-center px-4 ">
-              <div className="mb-6 md:mb-0 flex flex-col items-center">
-                {" "}
-                {/* Add flex items-center */}
-                <Link href="/">
-                  <div className="logo-image  w-24">
-                    {" "}
-                    {/* Add a width for the logo */}
-                    <l-cardio
-                      size="40"
-                      stroke="6"
-                      speed="2"
-                      color="white"
-                    ></l-cardio>
-                  </div>
-                </Link>
-                <p className="text-gray-400 mt-2">
-                  © 2023 Rajesh. All rights reserved.
-                </p>
-              </div>
+            className=" bg-black text-white py-4 px-6 md:px-12 lg:px-24 "
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
+            variants={fadeInUp}
+          >
+            <DockDemo />
 
-              <div className="flex space-x-4">
-                <a
-                  href="https://www.linkedin.com/in/rajesh-reddy1/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-green-400 transition-colors duration-200"
-                >
-                  LinkedIn
-                </a>
-                <a
-                  href="https://github.com/Rajesh-Reddy1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-green-400 transition-colors duration-200"
-                >
-                  GitHub
-                </a>
-                <a
-                  href="https://www.instagram.com/_rajeshreddy__/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-green-400 transition-colors duration-200"
-                >
-                  Instagram
-                </a>
+            <footer className="bg-black py-4 mt-16 relative">
+              <div className="mx-auto flex flex-col md:flex-row justify-evenly items-center px-4 ">
+                <div className="mb-6 md:mb-0 flex flex-col items-center">
+                  {" "}
+                  {/* Add flex items-center */}
+                  <Link href="/">
+                    <div className="logo-image  w-24">
+                      {" "}
+                      {/* Add a width for the logo */}
+                      <l-cardio
+                        size="40"
+                        stroke="6"
+                        speed="2"
+                        color="white"
+                      ></l-cardio>
+                    </div>
+                  </Link>
+                  <p className="text-gray-400 mt-2">
+                    © 2024 Rajesh. All rights reserved.
+                  </p>
+                </div>
+
+                <div className="flex space-x-4">
+                  <a
+                    href="https://www.linkedin.com/in/rajesh-reddy1/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-green-400 transition-colors duration-200"
+                  >
+                    LinkedIn
+                  </a>
+                  <a
+                    href="https://github.com/Rajesh-Reddy1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-green-400 transition-colors duration-200"
+                  >
+                    GitHub
+                  </a>
+                  <a
+                    href="https://www.instagram.com/_rajeshreddy__/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-green-400 transition-colors duration-200"
+                  >
+                    Instagram
+                  </a>
+                </div>
               </div>
-            </div>
-            <div className="  line absolute top-0 left-0 right-0 mx-auto w-5/7 h-px bg-gray-100"></div>
-          </footer>
-        </motion.section>
+              <div className="  line absolute top-0 left-0 right-0 mx-auto w-5/7 h-px bg-gray-100"></div>
+            </footer>
+          </motion.section>
         </main>
       </motion.div>
     </div>
