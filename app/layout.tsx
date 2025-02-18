@@ -19,7 +19,7 @@ const fontBody = Inter({
 export default function Layout({ children }: any) {
   return (
     <html lang="en">
-      <title>Protfolio</title>
+      <title>Portfolio</title>
       <link
         rel="icon"
         href="https://cdn-icons-png.flaticon.com/512/1045/1045140.png"
